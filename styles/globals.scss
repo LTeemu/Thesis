@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
 	font-family: 'Jura', sans-serif;
 	overflow-x: hidden;
@@ -28,7 +29,7 @@ p {
 }
 
 .toggleBorder {
-	outline: solid 2px #ea2e6e;
+	border: solid 1px #ea2e6e;
 }
 
 .my-children > *:not(:first-child) {
@@ -36,52 +37,24 @@ p {
 }
 
 .ml-children > *:not(:first-child) {
-	margin-left: 0.6em;
-}
-
-@-webkit-keyframes colorAnim {
-	0% {
-		text-shadow: greenyellow -1px 1.25px 1px;
-		-webkit-filter: blur(0.5px);
-		filter: blur(0.5px);
-	}
-	20% {
-		text-shadow: cyan 1.25px -1.5px 1px;
-		-webkit-filter: blur(0.5px);
-		filter: blur(0.5px);
-	}
-	80% {
-		text-shadow: red 1px 1.75px 1px;
-		-webkit-filter: blur(0.5px);
-		filter: blur(0.5px);
-	}
-	100% {
-		text-shadow: yellow -1.25px 1.25px 1px;
-		-webkit-filter: blur(0.5px);
-		filter: blur(0.5px);
-	}
+	margin-left: 0.5em;
 }
 
 @keyframes colorAnim {
 	0% {
 		text-shadow: greenyellow -1px 1.25px 1px;
-		-webkit-filter: blur(0.5px);
 		filter: blur(0.5px);
 	}
 	20% {
 		text-shadow: cyan 1.25px -1.5px 1px;
-		-webkit-filter: blur(0.5px);
 		filter: blur(0.5px);
 	}
 	80% {
 		text-shadow: red 1px 1.75px 1px;
-		-webkit-filter: blur(0.5px);
 		filter: blur(0.5px);
 	}
 	100% {
 		text-shadow: yellow -1.25px 1.25px 1px;
-		-webkit-filter: blur(0.5px);
 		filter: blur(0.5px);
 	}
 }
-/*# sourceMappingURL=globals.css.map */
