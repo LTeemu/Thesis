@@ -21,10 +21,9 @@ const ScrollTop = () => {
 
 	return (
 		scrollY > 300 && (
-			<div className='fixed bottom-0 right-0 bg-gray-900 dark:bg-slate-900 bg-opacity-60 dark:bg-opacity-60 rounded-tl-xl'>
+			<div className='fixed bottom-0 right-0 bg-gray-900 dark:bg-slate-900 bg-opacity-60 dark:bg-opacity-60 rounded-tl-xl' onClick={() => gsap.to(window, { duration: 0, scrollTo: 0 })}>
 				<AiOutlineRocket
 					size={45}
-					onClick={() => gsap.to(window, { duration: 0, scrollTo: 0 })}
 					className='p-[3px] text-slate-100'
 				/>
 			</div>
