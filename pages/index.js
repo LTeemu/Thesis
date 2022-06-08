@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Companies from '../components/Companies'
 gsap.registerPlugin(ScrollTrigger)
 
-const index = () => {
+const Index = () => {
 	const { theme } = useTheme()
 	/*
 	useEffect(() => {
@@ -169,4 +169,4 @@ const index = () => {
 	)
 }
 
-export default index
+export default Index
