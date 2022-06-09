@@ -8,12 +8,12 @@ import Link from 'next/dist/client/link'
 const Navbar = () => {
 	const [navOpen, setNavOpen] = useState(false)
 	return (
-		<div className='flex justify-between h-[50px] mt-2 mb-6 items-center px-6'>
+		<div className='flex justify-between h-[50px] my-2 items-center px-6'>
 			<Link href="/">
 				<a className='text-4xl font-bold'>Logo</a>
 			</Link>
 			<ul className='flex-row hidden text-lg md:flex'>
-				<Links/>
+				<Links />
 			</ul>
 			<div className='flex items ml-children'>
 				<ToggleBorder />

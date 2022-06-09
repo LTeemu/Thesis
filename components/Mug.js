@@ -4,7 +4,6 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const Mug = () => {
-
   useEffect(() => {
     const mugScrollTL = gsap.timeline({ scrollTrigger: { trigger: '#mug', start: 'top top', end: 'bottom 10%', toggleActions: 'play complete reverse reset', markers: false, ease: 'linear', scrub: 2, } })
     mugScrollTL.to('#beanm', { yPercent: 650, xPercent: -15, rotateZ: -5 })
@@ -29,7 +28,7 @@ const Mug = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMaxYMax"
-      className="absolute max-w-full max-h-full -z-50"
+      className="max-w-full max-h-full -z-50"
       id="mug"
     >
       <g id="mug">

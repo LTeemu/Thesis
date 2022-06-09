@@ -91,8 +91,6 @@ const Index = () => {
 						<Image
 							src={theme == 'dark' ? '/static/images/gold-gb3c2c7cc9_640-min.jpg' : '/static/images/stonebrown-gba1689dda_640-min.jpg'}
 							alt='image1'
-							width='100%'
-							height='100%'
 							layout='fill'
 							objectFit='cover'
 							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/lion-g8e83b75e5_640-min.png)]'}
@@ -114,8 +112,6 @@ const Index = () => {
 						<Image
 							src={theme == 'dark' ? '/static/images/floral-gf53e5d3f7_640-min.png' : '/static/images/stonegreen-ge638a8717_640-min.jpg'}
 							alt='image2'
-							width='100%'
-							height='100%'
 							layout='fill'
 							objectFit='cover'
 							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/octopus-g1e66bf027_640-min.png)]'}
@@ -137,8 +133,6 @@ const Index = () => {
 						<Image
 							src={theme == 'dark' ? '/static/images/sea-g7b36c973c_1280.jpg' : '/static/images/stoneblue-g2e266dc48_640-min.jpg'}
 							alt='image3'
-							width='100%'
-							height='100%'
 							layout='fill'
 							objectFit='cover'
 							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/fish-g2619bb8ac_640-min.png)]'}
