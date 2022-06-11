@@ -97,13 +97,9 @@ const Index = () => {
 					</div>
 
 					<div className='row-span-1'>
-						<h2 className='dark:animate-textColor'>Unicorn drinks coffee</h2>
+						<h2 className='dark:animate-textColor'>Lion, Sassbook AI Story Writer</h2>
 						<p>
-							Unicorn drinks coffee from an old cup. He has no place to put the
-							cup. He thrusts it into a slot in the wall. He opens it. He pulls
-							out a knife. He cuts a small hole in the cup. He collects the
-							coffee into the cup. He stashes the cup into his pocket. He
-							returns the knife to his belt.
+							Lion was a little chap. He looked like a cat, with a round nose and a short tail. His eyes were always on me as I entered the room, his ears were pricked forward, he was as silent as a mouse, like the cat. Now and then he would turn his eyes in my direction and look as meek as the little mouse. "I thought you said you were going straight to the wedding," said Ralph, in a low voice. Lion took a step toward him, almost afraid to touch him. Not at a word did the other tell his host that Lion was goingstraighttothewedding."Well," I said to Ralph. And then Lion ran to him and kissed him for the first time in his life.
 						</p>
 					</div>
 
@@ -118,13 +114,9 @@ const Index = () => {
 					</div>
 
 					<div className='row-span-1'>
-						<h2 className='dark:animate-textColor'>Brewed by nature</h2>
+						<h2 className='dark:animate-textColor'>Octopus in a briefcase</h2>
 						<p>
-							The juices of angels, never drank before, are elevated, By the rst
-							and second sip, to the brain. If the quality of the beverage is
-							considered The fust and fourth sip, the vilest brash and rude
-							words are employed. Through the manacles, the viscera are also
-							bared.
+							Octopus in a briefcase , a creature so small that it had been shrunk to almost the size of a human, had the entire back half of its body encased in the case. Its eyes were black and slits, its arms were thin and powerful. At the first minute of my death, I'd be returned to its home. With a small, soft, human hand, the octopus would make sure I got back to my home, to a home I had never been to, a place I never wanted .
 						</p>
 					</div>
 
@@ -139,11 +131,9 @@ const Index = () => {
 					</div>
 
 					<div className='row-span-1' id='link2'>
-						<h2 className='dark:animate-textColor'>Coffee mug</h2>
+						<h2 className='dark:animate-textColor'>Fish sticks</h2>
 						<p>
-							Coffee mug, dead against his table. Two and a half,year old
-							tattoos on his knuckles. More coffee mug, half full of dark fluid,
-							an empty coffee mug, and a full coffee mug sit in front of him.
+							Fish sticks are not to my taste, he declared; they are too good for the sea. He was right; the fish sticks were too perfect for sea food. And there I left him, feeling that I was on a certain level with the great ocean, and that my life was complete.
 						</p>
 					</div>
 				</div>
