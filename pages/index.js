@@ -1,7 +1,6 @@
 import Mug from '../components/Mug'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
-import ScrollTop from '../components/ScrollTop'
 import { useEffect } from 'react'
 import { gsap } from 'gsap/dist/gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -158,7 +157,6 @@ const Index = () => {
 				<path d='M60 120L0 0h120L60 120zm120 0L120 0h120l-60 120zm120 0L240 0h120l-60 120zm120 0L360 0h120l-60 120zm120 0L480 0h120l-60 120zm120 0L600 0h120l-60 120zm120 0L720 0h120l-60 120zm120 0L840 0h120l-60 120zm120 0L960 0h120l-60 120zm120 0L1080 0h120l-60 120z' />
 			</svg>
 			<Companies />
-			<ScrollTop />
 		</div>
 	)
 }

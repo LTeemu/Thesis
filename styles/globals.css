@@ -57,6 +57,32 @@ p {
   content: '';
 }
 
+#sun-shadow1 {
+  -webkit-box-shadow: 15px 0 0 0 #e3b566, -15px 0 0 0 #e3b566;
+          box-shadow: 15px 0 0 0 #e3b566, -15px 0 0 0 #e3b566;
+}
+
+#sun-shadow2 {
+  -webkit-box-shadow: 15px 0 0 0 #e3b566, -15px 0 0 0 #e3b566;
+          box-shadow: 15px 0 0 0 #e3b566, -15px 0 0 0 #e3b566;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+#sun-shadow3 {
+  -webkit-box-shadow: 15px 0 0 0 #d4a149, -15px 0 0 0 #d4a149;
+          box-shadow: 15px 0 0 0 #d4a149, -15px 0 0 0 #d4a149;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#sun-shadow4 {
+  -webkit-box-shadow: 15px 0 0 0 #d4a149, -15px 0 0 0 #d4a149;
+          box-shadow: 15px 0 0 0 #d4a149, -15px 0 0 0 #d4a149;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
 @-webkit-keyframes colorAnim {
   0% {
     text-shadow: greenyellow -1px 1.25px 1px;

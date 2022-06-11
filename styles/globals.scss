@@ -49,14 +49,42 @@ p {
     position: absolute;
     content: '';
   }
-  &:after{
+  
+  &:after {
     width: 100%;
     height: 6px;
-    background-color: yellow;    
+    background-color: yellow;
     bottom: 0;
     position: absolute;
     content: '';
   }
+}
+
+#sun-shadow1 {
+  box-shadow:
+    15px 0 0 0 #e3b566,
+    -15px 0 0 0 #e3b566;
+}
+
+#sun-shadow2 {
+  box-shadow:
+    15px 0 0 0 #e3b566,
+    -15px 0 0 0 #e3b566;
+  transform: rotate(90deg);
+}
+
+#sun-shadow3 {
+  box-shadow:
+    15px 0 0 0 #d4a149,
+    -15px 0 0 0 #d4a149;
+  transform: rotate(45deg);
+}
+
+#sun-shadow4 {
+  box-shadow:
+    15px 0 0 0 #d4a149,
+    -15px 0 0 0 #d4a149;
+  transform: rotate(-45deg);
 }
 
 @keyframes colorAnim {
