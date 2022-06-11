@@ -99,7 +99,7 @@ const Index = () => {
 					<div className='row-span-1'>
 						<h2 className='dark:animate-textColor'>Lion, Sassbook AI Story Writer</h2>
 						<p>
-							Lion was a little chap. He looked like a cat, with a round nose and a short tail. His eyes were always on me as I entered the room, his ears were pricked forward, he was as silent as a mouse, like the cat. Now and then he would turn his eyes in my direction and look as meek as the little mouse. "I thought you said you were going straight to the wedding," said Ralph, in a low voice. Lion took a step toward him, almost afraid to touch him. Not at a word did the other tell his host that Lion was goingstraighttothewedding."Well," I said to Ralph. And then Lion ran to him and kissed him for the first time in his life.
+							Lion was a little chap.He looked like a cat, with a round nose and a short tail.His eyes were always on me as I entered the room, his ears were pricked forward, he was as silent as a mouse, like the cat.Now and then he would turn his eyes in my direction and look as meek as the little mouse. &quot; I thought you said you were going straight to the wedding&quot;, said Ralph, in a low voice. Lion took a step toward him, almost afraid to touch him.Not at a word did the other tell his host that Lion was goingstraighttothewedding.&quot;Well&quot;, I said to Ralph. And then Lion ran to him and kissed him for the first time in his life.
 						</p>
 					</div>
 
@@ -133,7 +133,7 @@ const Index = () => {
 					<div className='row-span-1' id='link2'>
 						<h2 className='dark:animate-textColor'>Fish sticks</h2>
 						<p>
-							Fish sticks are not to my taste, he declared; they are too good for the sea. He was right; the fish sticks were too perfect for sea food. And there I left him, feeling that I was on a certain level with the great ocean, and that my life was complete.
+							Fish sticks are not to my taste, he declared. They are too good for the sea. He was right; the fish sticks were too perfect for sea food. And there I left him, feeling that I was on a certain level with the great ocean, and that my life was complete.
 						</p>
 					</div>
 				</div>
