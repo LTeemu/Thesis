@@ -116,7 +116,7 @@ const Index = () => {
 					<div className='row-span-1'>
 						<h2 className='dark:animate-textColor'>Octopus in a briefcase</h2>
 						<p>
-							Octopus in a briefcase , a creature so small that it had been shrunk to almost the size of a human, had the entire back half of its body encased in the case. Its eyes were black and slits, its arms were thin and powerful. At the first minute of my death, I'd be returned to its home. With a small, soft, human hand, the octopus would make sure I got back to my home, to a home I had never been to, a place I never wanted .
+							Octopus in a briefcase, a creature so small that it had been shrunk to almost the size of a human, had the entire back half of its body encased in the case.Its eyes were black and slits, its arms were thin and powerful.At the first minute of my death, I&apos;d be returned to its home. With a small, soft, human hand, the octopus would make sure I got back to my home, to a home I had never been to, a place I never wanted.
 						</p>
 					</div>
 
@@ -133,7 +133,7 @@ const Index = () => {
 					<div className='row-span-1' id='link2'>
 						<h2 className='dark:animate-textColor'>Fish sticks</h2>
 						<p>
-							Fish sticks are not to my taste, he declared. They are too good for the sea. He was right; the fish sticks were too perfect for sea food. And there I left him, feeling that I was on a certain level with the great ocean, and that my life was complete.
+							Fish sticks are not to my taste, he declared. They are too good for the sea. He was right. The fish sticks were too perfect for sea food. And there I left him, feeling that I was on a certain level with the great ocean, and that my life was complete.
 						</p>
 					</div>
 				</div>
