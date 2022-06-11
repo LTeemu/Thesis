@@ -4,7 +4,7 @@ export default function Document() {
 	return (
 		<Html lang='english' className='scroll-smooth'>
 			<Head>
-				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
+				<meta name='viewport' content='initial-scale=1.0, width=device-width' lang="en-us" />
 				<link rel='preconnect' href='https://fonts.googleapis.com' />
 				<link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
 				<link
