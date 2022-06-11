@@ -35,7 +35,7 @@ const Darkbtn = () => {
 			<span className='h-[9%] w-[15%] absolute opacity-1' id='sun-shadow2'></span>
 			<span className='h-[9%] w-[15%] absolute opacity-1' id='sun-shadow3'></span>
 			<span className='h-[9%] w-[15%] absolute opacity-1' id='sun-shadow4'></span>
-			<span className={'w-[70%] h-[70%] top-0 right-0 absolute bg-slate-300 dark:bg-slate-800 rounded-[50%]'} id='ball'></span>
+			<span className={'w-[70%] h-[70%] top-0 right-0 absolute bg-slate-300 dark:bg-slate-800 rounded-[50%] dark:h-0 dark:w-0'} id='ball'></span>
 		</div>
 	)
 }

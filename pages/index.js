@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import { gsap } from 'gsap/dist/gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Companies from '../components/Companies'
+import Head from 'next/head'
 gsap.registerPlugin(ScrollTrigger)
 
 const Index = () => {
@@ -34,12 +35,9 @@ const Index = () => {
 	*/
 
 	//The location on the page to which the user has scrolled will be restored by default, disabled with manual due to gsap problems.
-	useEffect(() => {
-		window.history.scrollRestoration = 'manual'
-	}, []);
-
 	return (
 		<div className='flex flex-col'>
+			<Head><title>{'TL - Home'}</title></Head>
 			<div className='relative grid grid-cols-1 px-6 sm:grid-cols-2 w-full max-w-[1400px] sm:mx-auto'>
 				<div className='flex flex-col justify-center'>
 					<h1 className='dark:animate-textColor'>Coffee mug</h1>
