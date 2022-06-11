@@ -2,7 +2,8 @@ import Mug from '../components/Mug'
 
 const page2 = () => {
   return (
-    <div className='h-[calc(100vh_-_66px)]'>
+    //Minus header and footer
+    <div className='h-[calc(100vh_-_66px_-_59.2px)] flex justify-center'>
       <Mug />
     </div >
   );

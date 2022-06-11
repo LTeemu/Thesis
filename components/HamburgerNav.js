@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { gsap, Linear, Back } from 'gsap/dist/gsap'
+import { gsap, Linear, Back } from 'gsap'
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import Hamburger from './Hamburger'
 import Links from './Links'
@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollToPlugin)
 
 const HamburgerNav = ({ navOpen, setNavOpen }) => {
   const navTL = useRef()
-	
+
   useEffect(() => {
     navTL.current = gsap.timeline({ defaults: { ease: Linear } })
     navTL.current
@@ -23,13 +23,11 @@ const HamburgerNav = ({ navOpen, setNavOpen }) => {
     <>
       <Hamburger navOpen={navOpen} setNavOpen={setNavOpen} />
       <div
-        className={`z-50 absolute mt-[50px] right-6 w-max md:hidden dark:bg-slate-900  bg-slate-200 border-2 border-slate-500 opacity-0 rounded-2xl ${
-          navOpen ? 'pointer-events-auto' : 'pointer-events-none'
-        }`}
+        className={`z-50 absolute mt-[50px] right-6 w-max md:hidden dark:bg-slate-900  bg-slate-200 border-2 border-slate-500 opacity-0 rounded-2xl ${navOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
         id="navContainer"
       >
         <ul className="flex flex-col p-4 text-xl my-children">
-        <Links/>
+          <Links />
         </ul>
       </div>
     </>

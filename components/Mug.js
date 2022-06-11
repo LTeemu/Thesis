@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { gsap } from 'gsap/dist/gsap'
+import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
@@ -28,7 +28,7 @@ const Mug = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMaxYMax"
-      className="max-w-full max-h-full -z-50"
+      className="z-40 max-w-full max-h-full"
       id="mug"
     >
       <g id="mug">

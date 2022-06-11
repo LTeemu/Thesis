@@ -12,7 +12,7 @@ export default function Document() {
 					rel='stylesheet'
 				/>
 			</Head>
-			<body className='mx-auto dark:bg-slate-800 bg-slate-300'>
+			<body className='mx-auto bg-slate-300 dark:bg-slate-800'>
 				<Main />
 				<NextScript />
 			</body>

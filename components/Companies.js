@@ -1,55 +1,18 @@
-import { useState, useEffect, useRef } from 'react'
-import { gsap } from 'gsap/dist/gsap'
-import { SteppedEase } from 'gsap'
+import { useEffect, useRef } from 'react'
+import { gsap, SteppedEase } from 'gsap'
 
 const Companies = () => {
 	const tl1 = useRef()
 	const tl2 = useRef()
 	const tl3 = useRef()
+
 	useEffect(() => {
-		tl1.current = gsap.timeline({
-			defaults: {
-				repeat: Infinity,
-				ease: 'linear',
-			},
-		})
-
-		tl2.current = gsap.timeline({
-			defaults: {
-				repeat: Infinity,
-				ease: 'linear',
-			},
-		})
-
-		tl3.current = gsap.timeline({
-			defaults: {
-				repeat: Infinity,
-				ease: 'linear',
-			},
-		})
-
-		tl1.current.fromTo(
-			'#companies1',
-			{ xPercent: 0 },
-			{ xPercent: -50, duration: 14 }
-		)
-		tl2.current.fromTo(
-			'#companies2',
-			{ xPercent: -50 },
-			{
-				xPercent: 0,
-				duration: 12,
-			}
-		)
-		tl3.current.fromTo(
-			'#companies3',
-			{ xPercent: -50 },
-			{
-				xPercent: 0,
-				duration: 12,
-				ease: SteppedEase.config(7),
-			}
-		)
+		tl1.current = gsap.timeline({ defaults: { repeat: Infinity, ease: 'linear' } })
+		tl2.current = gsap.timeline({ defaults: { repeat: Infinity, ease: 'linear' } })
+		tl3.current = gsap.timeline({ defaults: { repeat: Infinity, ease: 'linear' } })
+		tl1.current.fromTo('#companies1', { xPercent: 0 }, { xPercent: -50, duration: 14 })
+		tl2.current.fromTo('#companies2', { xPercent: -50 }, { xPercent: 0, duration: 12 })
+		tl3.current.fromTo('#companies3', { xPercent: -50 }, { xPercent: 0, duration: 12, ease: SteppedEase.config(7) })
 	}, [])
 
 	return (
