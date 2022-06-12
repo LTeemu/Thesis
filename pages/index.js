@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Index = () => {
 	const { theme } = useTheme()
+
 	/*
 	useEffect(() => {
 		gsap.utils.toArray('.grid').forEach((element) => {
@@ -18,7 +19,7 @@ const Index = () => {
 				{ y: 20, opacity: 0, duration: 1 },
 				{
 					y: 0,
-					opacity: 1,z
+					opacity: 1,
 					stagger: 0.1,
 					duration: 1,
 					scrollTrigger: {
@@ -32,7 +33,7 @@ const Index = () => {
 			)
 		})
 	}, [])
-	*/
+*/
 
 	//The location on the page to which the user has scrolled will be restored by default, disabled with manual due to gsap problems.
 	return (
@@ -80,14 +81,11 @@ const Index = () => {
 			</svg>
 
 			<div className='flex flex-col items-center w-screen bg-slate-200 dark:bg-gray-900'>
-				<div
-					className='grid grid-cols-1 gap-10 px-6 py-12 md:grid-cols-2 max-w-[1400px]'
-					id='link1'
-				>
+				<div className='grid grid-cols-1 gap-10 px-6 py-12 md:grid-cols-2 max-w-[1400px]'>
 					<div className='relative row-span-2 min-h-[350px]'>
 						<Image
 							src={theme == 'dark' ? '/static/images/gold-gb3c2c7cc9_640-min.jpg' : '/static/images/stonebrown-gba1689dda_640-min.jpg'}
-							alt='image1'
+							alt='Lion'
 							layout='fill'
 							objectFit='cover'
 							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/lion-g8e83b75e5_640-min.png)]'}
@@ -104,7 +102,7 @@ const Index = () => {
 					<div className='relative row-span-2 md:row-span-3 min-h-[350px]'>
 						<Image
 							src={theme == 'dark' ? '/static/images/floral-gf53e5d3f7_640-min.png' : '/static/images/stonegreen-ge638a8717_640-min.jpg'}
-							alt='image2'
+							alt='Octopus'
 							layout='fill'
 							objectFit='cover'
 							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/octopus-g1e66bf027_640-min.png)]'}
@@ -121,7 +119,7 @@ const Index = () => {
 					<div className='relative row-span-2 min-h-[350px]'>
 						<Image
 							src={theme == 'dark' ? '/static/images/sea-g7b36c973c_1280.jpg' : '/static/images/stoneblue-g2e266dc48_640-min.jpg'}
-							alt='image3'
+							alt='Fish'
 							layout='fill'
 							objectFit='cover'
 							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/fish-g2619bb8ac_640-min.png)]'}

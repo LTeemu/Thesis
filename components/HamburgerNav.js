@@ -12,7 +12,7 @@ const HamburgerNav = ({ navOpen, setNavOpen }) => {
     navTL.current = gsap.timeline({ defaults: { ease: Linear } })
     navTL.current
       .fromTo('#navContainer', { opacity: 0, height: 0 }, { opacity: 1, duration: 1, height: 'auto' })
-      .fromTo('#navContainer ul a', { opacity: 0, y: 20 }, { opacity: 1, stagger: 0.15, duration: 0.3, y: 0, ease: Back.easeOut.config(4) }, '<+0.15')
+      .fromTo('#linkContainer a', { opacity: 0, y: 20 }, { opacity: 1, stagger: 0.15, duration: 0.3, y: 0, ease: Back.easeOut.config(4) }, '<+0.15')
   }, [])
 
   useEffect(() => {
@@ -26,9 +26,9 @@ const HamburgerNav = ({ navOpen, setNavOpen }) => {
         className={`z-50 absolute mt-[50px] right-6 w-max md:hidden dark:bg-slate-900  bg-slate-200 border-2 border-slate-500 opacity-0 rounded-2xl ${navOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
         id="navContainer"
       >
-        <ul className="flex flex-col p-4 text-xl my-children">
+        <div className="flex flex-col p-4 text-xl my-children" id='linkContainer'>
           <Links />
-        </ul>
+        </div>
       </div>
     </>
   )

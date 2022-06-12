@@ -31,7 +31,7 @@ const Mug = () => {
       className="z-40 max-w-full max-h-full"
       id="mug"
     >
-      <g id="mug">
+      <g>
         <g id="Group">
           <path
             className="dark:opacity-0"

@@ -13,9 +13,9 @@ const Navbar = () => {
 			<Link href="/">
 				<a className='text-4xl font-bold'>Logo</a>
 			</Link>
-			<ul className='flex-row hidden text-lg md:flex'>
+			<div className='flex-row hidden text-lg md:flex'>
 				<Links />
-			</ul>
+			</div>
 			<div className='flex items ml-children'>
 				<ToggleBorder />
 				<Darkbtn />

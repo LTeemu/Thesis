@@ -10,7 +10,7 @@ const custom404 = () => {
       <div className='relative w-screen max-w-lg'>
         <Image
           src={'/static/images/oops-gbb906866a_1280-removebg-preview-min.png'}
-          alt='image1'
+          alt='404 Note'
           layout='responsive'
           objectFit='contain'
           width='100%'
