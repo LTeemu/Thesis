@@ -36,7 +36,7 @@ p {
 }
 
 .ml-children > *:not(:first-child) {
-  margin-left: 0.5em;
+  margin-left: 1em;
 }
 
 #hamburger:before {

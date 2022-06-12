@@ -8,17 +8,17 @@ const ToggleBorder = () => {
     let divs = document.querySelectorAll('div')
     bordersVisible
       ? divs.forEach((div) => {
-          div.classList.add('toggleBorder')
-        })
+        div.classList.add('toggleBorder')
+      })
       : divs.forEach((div) => {
-          div.classList.remove('toggleBorder')
-        })
+        div.classList.remove('toggleBorder')
+      })
   }, [bordersVisible])
 
   return bordersVisible ? (
-    <BsBorder onClick={() => setBordersVisible(!bordersVisible)} size={30} color="#ea2e6e" className="m-auto cursor-pointer" />
+    <BsBorder onClick={() => setBordersVisible(!bordersVisible)} size={40} color="#ea2e6e" className="m-auto cursor-pointer" />
   ) : (
-    <BsBorderAll onClick={() => setBordersVisible(!bordersVisible)} size={30} color="#ea2e6e" className="m-auto cursor-pointer" />
+    <BsBorderAll onClick={() => setBordersVisible(!bordersVisible)} size={40} color="#ea2e6e" className="m-auto cursor-pointer" />
   )
 }
 

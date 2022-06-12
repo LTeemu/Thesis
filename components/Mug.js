@@ -19,7 +19,7 @@ const Mug = () => {
       .to('#face', { yoyo: true, translateX: -10, duration: 0.8, scaleX: 1.01, repeatDelay: 10, }, 'loopStart')
       .to('#mugshadow, #hshadowt, #hshadowb', { yoyo: true, duration: 3, scaleX: 0.8, repeatDelay: 10, }, 'loopStart')
       .to('#groundshadow', { yoyo: true, duration: 3, scaleX: 1.1, xPercent: -10, yPercent: -3, repeatDelay: 10, }, 'loopStart')
-      .to('#coffeedark', { yoyo: true, duration: 3, scaleX: 0.9, repeatDelay: 1, }, 'loopStart')
+    //.to('#coffeedark', { yoyo: true, duration: 3, scaleX: 0.9, repeatDelay: 1, }, 'loopStart')
   }, [])
 
   return (

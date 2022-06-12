@@ -14,7 +14,7 @@ const Darkbtn = () => {
 			.fromTo('#sun-shadow2', { boxShadow: '15px 0 0 0 #e3b566, -15px 0 0 0 #e3b566', rotation: 90, opacity: 1 }, { boxShadow: '0px 0 0 0 transparent, 0px 0 0 0 transparent', opacity: 0 }, '<')
 			.fromTo('#sun-shadow3', { boxShadow: '15px 0 0 0 #d4a149, -15px 0 0 0 #d4a149', rotation: 45, opacity: 1 }, { boxShadow: '0px 0 0 0 transparent, 0px 0 0 0 transparent', opacity: 0 }, '<')
 			.fromTo('#sun-shadow4', { boxShadow: '15px 0 0 0 #d4a149, -15px 0 0 0 #d4a149', rotation: -45, opacity: 1 }, { boxShadow: '0px 0 0 0 transparent, 0px 0 0 0 transparent', opacity: 0 }, '<')
-			.fromTo('#sun', { width: '55%', height: '55%', backgroundColor: '#e3b566' }, { width: '90%', height: '90%', backgroundColor: '#31267a' }, '<+0.1')
+			.fromTo('#sun', { width: '40%', height: '40%', backgroundColor: '#e3b566' }, { width: '90%', height: '90%', backgroundColor: '#31267a' }, '<+0.1')
 			.fromTo('#ball', { height: 0, width: 0 }, { height: '70%', width: '70%' }, '<')
 			.addLabel('dark')
 	}, [])
@@ -28,9 +28,9 @@ const Darkbtn = () => {
 	}, [])
 
 	return (
-		<div id='darkbtn_container' className='cursor-pointer flex flex-col relative h-[32px] w-[32px] m-auto items-center justify-center'
+		<div id='darkbtn_container' className='cursor-pointer flex flex-col relative h-[40px] w-[40px] m-auto items-center justify-center'
 			onClick={() => theme === 'dark' ? setTheme('light') : setTheme('dark')}>
-			<span className={'w-[55%] h-[55%] bg-[#e3b566] rounded-[50%]'} id='sun'></span>
+			<span className={'w-[40%] h-[40%] bg-[#e3b566] rounded-[50%]'} id='sun'></span>
 			<span className='h-[9%] w-[15%] absolute opacity-1' id='sun-shadow1'></span>
 			<span className='h-[9%] w-[15%] absolute opacity-1' id='sun-shadow2'></span>
 			<span className='h-[9%] w-[15%] absolute opacity-1' id='sun-shadow3'></span>
