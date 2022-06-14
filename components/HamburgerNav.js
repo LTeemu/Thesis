@@ -17,7 +17,7 @@ const HamburgerNav = ({ navOpen, setNavOpen }) => {
   }, [])
 
   useEffect(() => {
-    navOpen ? navTL.current.timeScale(1.2).play() : navTL.current.timeScale(2.4).reverse()
+    navOpen ? navTL.current.timeScale(1.5).play() : navTL.current.timeScale(3).reverse()
   }, [navOpen])
 
   return (
