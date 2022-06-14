@@ -30,7 +30,7 @@ const Darkbtn = () => {
 	return (
 		<div id='darkbtn_container' className='cursor-pointer flex flex-col relative h-[40px] w-[40px] m-auto items-center justify-center'
 			onClick={() => theme === 'dark' ? setTheme('light') : setTheme('dark')}>
-			<span className={'w-[40%] h-[40%] bg-[#e3b566] rounded-[50%]'} id='sun'></span>
+			<span className={'w-[40%] h-[40%] bg-[#e3b566] rounded-[50%] shadow-[inset_-1px_-1px_2px_1px_rgba(0,0,0,0.4)]'} id='sun'></span>
 			<span className='h-[9%] w-[15%] absolute opacity-1' id='sun-shadow1'></span>
 			<span className='h-[9%] w-[15%] absolute opacity-1' id='sun-shadow2'></span>
 			<span className='h-[9%] w-[15%] absolute opacity-1' id='sun-shadow3'></span>
