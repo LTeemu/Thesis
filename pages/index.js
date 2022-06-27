@@ -36,6 +36,10 @@ const Index = () => {
 */
 
 	//The location on the page to which the user has scrolled will be restored by default, disabled with manual due to gsap problems.
+	useEffect(() => {
+		window.history.scrollRestoration = 'manual'
+	}, []);
+
 	return (
 		<div className='flex flex-col'>
 			<Head><title>{'TL - Home'}</title></Head>
