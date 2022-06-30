@@ -13,7 +13,7 @@ const HamburgerNav = ({ navOpen, setNavOpen }) => {
     navTL.current
       .fromTo('#navContainer', { display: 'none' }, { display: 'block' })
       .fromTo('#navContainer', { height: 0 }, { duration: 1.8, height: 'auto' }, '<')
-      .fromTo('#linkContainer a', { opacity: 0, y: 10 }, { opacity: 1, stagger: 0.3, duration: 0.3, y: 0, ease: Back.easeOut.config(4) }, '<+0.3')
+      .fromTo('#linkContainer a', { opacity: 0, y: 10, pointerEvents: 'none' }, { opacity: 1, pointerEvents: 'auto', stagger: 0.3, duration: 0.3, y: 0, ease: Back.easeOut.config(4) }, '<+0.3')
   }, [])
 
   useEffect(() => {
@@ -24,10 +24,10 @@ const HamburgerNav = ({ navOpen, setNavOpen }) => {
     <>
       <Hamburger navOpen={navOpen} setNavOpen={setNavOpen} />
       <div
-        className={`z-50 absolute mt-[50px] right-6 w-max md:hidden dark:bg-slate-900 bg-slate-200 shadow-[inset_0_0_10px_1px_rgba(0,0,0,0.5)] rounded-2xl hidden ${navOpen ? 'pointer-events-auto' : 'pointer-events-none'} `}
+        className={`z-50 absolute top-[66px] right-6 md:hidden dark:bg-slate-900 bg-slate-200 shadow-[inset_0_0_10px_1px_rgba(0,0,0,0.5)] rounded-b-2xl`}
         id="navContainer"
       >
-        <div className="flex flex-col p-4 text-xl my-children" id='linkContainer'>
+        <div className="flex flex-col p-4 text-xl md:hidden my-children" id='linkContainer'>
           <Links />
         </div>
       </div>

@@ -2,13 +2,13 @@ import Link from 'next/link'
 
 const Links = () => {
 	return (
-		<>	
+		<>
 			<Link href="/">
 				<a className='font-bold'>Home</a>
 			</Link>
 
-			<Link href="/page2">
-				<a className='font-bold md:ml-5'>Page 2</a>
+			<Link href="/slider">
+				<a className='font-bold md:ml-5'>Slider</a>
 			</Link>
 
 			<Link href="/page3">

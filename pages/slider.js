@@ -4,7 +4,7 @@ import { gsap, Expo } from 'gsap'
 import { Observer } from 'gsap/dist/Observer'
 gsap.registerPlugin(Observer);
 
-const Page2 = () => {
+const Slider = () => {
   const animating = useRef(false)
   const index = useRef(0)
   const slides = useRef()
@@ -17,21 +17,31 @@ const Page2 = () => {
     const observer = Observer.create({
       target: window,
       type: "wheel, touch",
-      tolerance: 100,
-      onUp: () => {
+      tolerance: 50,
+      onRight: () => {
         if (!animating.current) {
           console.log("up");
           gotoSection(-1);
         }
       },
-      onDown: () => {
+      onLeft: () => {
         if (!animating.current) {
           console.log("down");
           gotoSection(+1);
         }
       },
+      onWheel: () => {
+        if (!animating.current) {
+          console.log(observer.velocityY);
+          if (observer.velocityY < 0) {
+            gotoSection(-1);
+          }
+          else if (observer.velocityY > 0) {
+            gotoSection(+1);
+          }
+        }
+      },
     })
-
     return () => {
       observer.disable()
     }
@@ -59,11 +69,11 @@ const Page2 = () => {
 
   return (
     <>
-      <Head><title>{'TL - Page 2'}</title></Head>
+      <Head><title>{'TL - Slider'}</title></Head>
       <div className='w-screen h-[calc(100vh_-_66px_-_59.2px)] flex text-slate-100'>
         <div className='fixed flex-col w-full h-[calc(100vh_-_66px_-_59.2px)] px-6 bg-center bg-cover flex items-center justify-center slide bg_slide1'>
           <h1 className='slideText0'>Slide 1</h1>
-          <p className='slideText0'>Scroll & Swipe Vertically</p>
+          <p className='slideText0'>Mouse Scroll or Swipe Horizontally. <br /> Made with GSAP Observer</p>
         </div>
         <div className='fixed w-full h-[calc(100vh_-_66px_-_59.2px)] hidden px-6 bg-cover items-center flex-col justify-center slide bg_slide2'>
           <h1 className='slideText1'>Slide 2</h1>
@@ -78,4 +88,4 @@ const Page2 = () => {
   );
 }
 
-export default Page2;
+export default Slider;
