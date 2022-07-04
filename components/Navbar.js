@@ -8,6 +8,7 @@ import ScrollTop from '../components/ScrollTop'
 
 const Navbar = () => {
 	const [navOpen, setNavOpen] = useState(false)
+
 	return (
 		<div className='flex justify-between h-[50px] my-2 items-center px-6'>
 			<Link href="/">

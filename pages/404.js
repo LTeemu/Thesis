@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Head from 'next/head'
 
-const custom404 = () => {
+const Custom404 = () => {
   return (
     //Minus header and footer
     <div className='flex flex-col items-center h-[calc(100vh_-_66px_-_59.2px)]'>
@@ -21,4 +21,4 @@ const custom404 = () => {
   );
 }
 
-export default custom404;
+export default Custom404;
