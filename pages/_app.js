@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
 		<ThemeProvider attribute='class' defaultTheme='light'>
 			<Head>
 				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
-				<meta name="google-site-verification" content="3JkPx1SLLuX61efUKK3dtabVXwvuGxCo1fUbiUICgQo" />
+				<meta name="google-site-verification" content="AxyPfun3tuhThDWPAH4wV9PAda1FJUYVpfJJDKqBHio" />
 			</Head>
 			<Layout>
 				<Component {...pageProps} />
