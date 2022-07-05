@@ -99,7 +99,7 @@ const Index = () => {
 					<div className='row-span-1'>
 						<h2 className='dark:animate-textColor'>Lion, Sassbook AI Story Writer</h2>
 						<p>
-							Lion was a little chap.He looked like a cat, with a round nose and a short tail.His eyes were always on me as I entered the room, his ears were pricked forward, he was as silent as a mouse, like the cat.Now and then he would turn his eyes in my direction and look as meek as the little mouse. &quot; I thought you said you were going straight to the wedding&quot;, said Ralph, in a low voice. Lion took a step toward him, almost afraid to touch him.Not at a word did the other tell his host that Lion was goingstraighttothewedding.&quot;Well&quot;, I said to Ralph. And then Lion ran to him and kissed him for the first time in his life.
+							Lion was a little chap. He looked like a cat, with a round nose and a short tail. His eyes were always on me as I entered the room, his ears were pricked forward, he was as silent as a mouse, like the cat. Now and then he would turn his eyes in my direction and look as meek as the little mouse. &quot; I thought you said you were going straight to the wedding&quot;, said Ralph, in a low voice. Lion took a step toward him, almost afraid to touch him. Not at a word did the other tell his host that Lion was going straight to the wedding. &quot;Well&quot;, I said to Ralph. And then Lion ran to him and kissed him for the first time in his life.
 						</p>
 					</div>
 
@@ -116,7 +116,7 @@ const Index = () => {
 					<div className='row-span-1'>
 						<h2 className='dark:animate-textColor'>Octopus in a briefcase</h2>
 						<p>
-							Octopus in a briefcase, a creature so small that it had been shrunk to almost the size of a human, had the entire back half of its body encased in the case.Its eyes were black and slits, its arms were thin and powerful.At the first minute of my death, I&apos;d be returned to its home. With a small, soft, human hand, the octopus would make sure I got back to my home, to a home I had never been to, a place I never wanted.
+							Octopus in a briefcase, a creature so small that it had been shrunk to almost the size of a human, had the entire back half of its body encased in the case. Its eyes were black and slits, its arms were thin and powerful. At the first minute of my death, I&apos;d be returned to its home. With a small, soft, human hand, the octopus would make sure I got back to my home, to a home I had never been to, a place I never wanted.
 						</p>
 					</div>
 

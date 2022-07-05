@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Mug = () => {
   useEffect(() => {
-    const mugScrollTL = gsap.timeline({ scrollTrigger: { trigger: '#mug', start: 'top top', end: 'bottom 10%', toggleActions: 'play pause reverse none', markers: false, ease: 'linear', scrub: 2, } })
+    const mugScrollTL = gsap.timeline({ scrollTrigger: { trigger: '#mug', start: 'top top', end: 'bottom 10%', toggleActions: 'play complete reverse complete', markers: false, ease: 'linear', scrub: 2, } })
     mugScrollTL.to('#beanm', { yPercent: 650, xPercent: -15, rotateZ: -5 })
       .to('#beanr', { yPercent: 700, xPercent: -200, rotateZ: 5, }, '<')
       .to('#beanl', { yPercent: 250, xPercent: 50, rotateZ: -5, }, '<')
