@@ -17,7 +17,7 @@ const Slider = () => {
     const observer = Observer.create({
       target: window,
       type: "wheel, touch",
-      tolerance: 50,
+      tolerance: 30,
       onRight: () => {
         if (!animating.current) {
           console.log("up");

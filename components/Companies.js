@@ -51,7 +51,7 @@ const Companies = () => {
 	}, [])
 
 	return (
-		<div className='w-full overflow-x-hidden'>
+		<div className='w-full overflow-x-hidden' tabIndex={-1}>
 			<div
 				className='flex w-min min-w-[200%] justify-around dark:text-orange-400 border-[rgba(0,0,0,0.1)] py-1'
 				id='companies1'

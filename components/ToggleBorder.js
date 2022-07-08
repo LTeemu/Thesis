@@ -15,10 +15,10 @@ const ToggleBorder = () => {
       })
   }, [bordersVisible])
 
-  return bordersVisible ? (
-    <BsBorder onClick={() => setBordersVisible(!bordersVisible)} size={40} color="#ea2e6e" className="m-auto cursor-pointer" />
-  ) : (
-    <BsBorderAll onClick={() => setBordersVisible(!bordersVisible)} size={40} color="#ea2e6e" className="m-auto cursor-pointer" />
+  return (
+    <button onClick={() => setBordersVisible(!bordersVisible)}>
+      {bordersVisible ? <BsBorder size={40} color="#ea2e6e" /> : <BsBorderAll size={40} color="#ea2e6e" />}
+    </button>
   )
 }
 
