@@ -4,7 +4,6 @@ import Darkbtn from './Darkbtn'
 import Links from './Links'
 import ToggleBorder from './ToggleBorder'
 import Link from 'next/dist/client/link'
-import ScrollTop from '../components/ScrollTop'
 
 const Navbar = () => {
 	const [navOpen, setNavOpen] = useState(false)
@@ -22,7 +21,6 @@ const Navbar = () => {
 				<Darkbtn />
 				<HamburgerNav navOpen={navOpen} setNavOpen={setNavOpen} />
 			</div>
-			<ScrollTop />
 		</div>
 	)
 }
