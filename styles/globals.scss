@@ -113,6 +113,21 @@ $bg-gradient: linear-gradient(180deg,
   transform: rotate(-45deg);
 }
 
+/* Focusing the button with a keyboard */
+*:focus-visible {
+  outline: 4px dashed #cc26a2;
+}
+
+/* Focusing the button with a mouse, touch, or stylus */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Disabled on Firefox because shows on mouse click */
+*:-moz-focusring {
+  outline: none;
+}
+
 @keyframes colorAnim {
   0% {
     text-shadow: greenyellow -1px 1.25px 1px;
