@@ -70,7 +70,7 @@ const Slider = () => {
   return (
     <>
       <Head><title>{'TL - Slider'}</title></Head>
-      <div className='w-screen h-[calc(100vh_-_66px_-_59.2px)] flex text-slate-100'>
+      <div className='w-screen h-[calc(100vh_-_66px_-_65px)] flex text-slate-100'>
         <div className='fixed flex-col w-full h-[calc(100vh_-_66px_-_59.2px)] px-6 bg-center bg-cover flex items-center justify-center slide bg_slide1'>
           <h1 className='slideText0'>Slide 1</h1>
           <p className='slideText0'>Mouse Scroll or Swipe Horizontally. <br /> Made with GSAP Observer</p>

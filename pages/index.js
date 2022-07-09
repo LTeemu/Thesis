@@ -79,12 +79,12 @@ const Index = () => {
 				preserveAspectRatio='none'
 				viewBox='0 0 1200 120'
 				xmlns='http://www.w3.org/2000/svg'
-				className='fill-slate-200 dark:fill-gray-900 h-[2.5vw] w-full rotate-180 -mb-[1px]'
+				className='fill-lightsecondary dark:fill-darksecondary h-[2.5vw] w-full rotate-180 -mb-[1px]'
 			>
 				<path d='M60 120L0 0h120L60 120zm120 0L120 0h120l-60 120zm120 0L240 0h120l-60 120zm120 0L360 0h120l-60 120zm120 0L480 0h120l-60 120zm120 0L600 0h120l-60 120zm120 0L720 0h120l-60 120zm120 0L840 0h120l-60 120zm120 0L960 0h120l-60 120zm120 0L1080 0h120l-60 120z' />
 			</svg>
 
-			<div className='flex flex-col items-center w-screen bg-slate-200 dark:bg-gray-900'>
+			<div className='flex flex-col items-center w-screen bg-lightsecondary dark:bg-darksecondary'>
 				<div className='grid grid-cols-1 gap-10 px-6 py-12 md:grid-cols-2 max-w-[1400px]'>
 					<div className='relative row-span-2 min-h-[350px]'>
 						<Image
@@ -142,7 +142,7 @@ const Index = () => {
 				preserveAspectRatio='none'
 				viewBox='0 0 1200 120'
 				xmlns='http://www.w3.org/2000/svg'
-				className='fill-slate-200 dark:fill-gray-900 h-[2.5vw] w-full mb-5 -mt-[1px]'
+				className='fill-lightsecondary dark:fill-darksecondary h-[2.5vw] w-full mb-5 -mt-[1px]'
 			>
 				<path d='M60 120L0 0h120L60 120zm120 0L120 0h120l-60 120zm120 0L240 0h120l-60 120zm120 0L360 0h120l-60 120zm120 0L480 0h120l-60 120zm120 0L600 0h120l-60 120zm120 0L720 0h120l-60 120zm120 0L840 0h120l-60 120zm120 0L960 0h120l-60 120zm120 0L1080 0h120l-60 120z' />
 			</svg>

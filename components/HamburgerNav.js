@@ -18,14 +18,14 @@ const HamburgerNav = ({ navOpen, setNavOpen }) => {
   }, [])
 
   useEffect(() => {
-    navOpen ? navTL.current.timeScale(1.5).play() : navTL.current.timeScale(3).reverse()
+    navOpen ? navTL.current.timeScale(1.7).play() : navTL.current.timeScale(3.4).reverse()
   }, [navOpen])
 
   return (
     <>
       <Hamburger navOpen={navOpen} setNavOpen={setNavOpen} />
-      <div className='z-50 absolute top-[66px] right-6 md:hidden dark:bg-slate-900 bg-slate-200 shadow-[inset_0_0_6px_0px_rgba(0,0,0,0.5)] rounded-b-2xl hidden' id="navContainer">
-        <div className="flex flex-col p-4 text-xl md:hidden my-children" id='linkContainer'>
+      <div id="navContainer" className='z-50 absolute top-[66px] right-6 md:hidden dark:bg-darksecondary bg-slate-200 shadow-[inset_0_0_6px_0px_rgba(0,0,0,0.5)] rounded-b-2xl hidden'>
+        <div id='linkContainer' className="flex flex-col p-4 text-xl md:hidden my-children">
           <Links />
         </div>
       </div>
