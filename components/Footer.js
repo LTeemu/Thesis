@@ -2,7 +2,7 @@ import { VscGithub } from 'react-icons/vsc'
 
 const Footer = () => {
 	return (
-		<div className='flex items-center justify-center py-5 ml-6'>
+		<div className='flex items-center justify-center py-5'>
 			<a href="https://github.com/lteemu" target='_blank' rel="noreferrer" className='mr-2'>
 				<VscGithub size={25} />
 			</a>
