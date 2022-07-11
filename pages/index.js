@@ -11,29 +11,28 @@ gsap.registerPlugin(ScrollTrigger)
 const Index = () => {
 	const { theme } = useTheme()
 
-	/*
 	useEffect(() => {
-		gsap.utils.toArray('.grid').forEach((element) => {
+		gsap.utils.toArray('.fadein').forEach((element) => {
 			gsap.fromTo(
 				element,
-				{ y: 20, opacity: 0, duration: 1 },
+				{ y: 0, opacity: 0.4 },
 				{
 					y: 0,
+					ease: 'linear',
 					opacity: 1,
-					stagger: 0.1,
-					duration: 1,
+					duration: 0.5,
 					scrollTrigger: {
 						trigger: element,
-						start: 'top 95%',
-						end: 'bottom 5%',
-						markers: true,
-						toggleActions: 'play complete',
+						start: 'top 90%',
+						end: 'bottom 10%',
+						//once: true,
+						//markers: true,
+						toggleActions: 'play reverse play reverse'
 					},
 				}
 			)
 		})
 	}, [])
-*/
 
 	//The location on the page to which the user has scrolled will be restored by default, disabled with manual due to gsap problems.
 	useEffect(() => {
@@ -86,7 +85,7 @@ const Index = () => {
 
 			<div className='flex flex-col items-center w-screen bg-lightsecondary dark:bg-darksecondary'>
 				<div className='grid grid-cols-1 gap-10 px-6 py-12 md:grid-cols-2 max-w-[1400px]'>
-					<div className='relative row-span-2 min-h-[350px]'>
+					<div className='relative row-span-2 min-h-[350px] fadein'>
 						<Image
 							src={theme == 'dark' ? '/static/images/gold-gb3c2c7cc9_640-min.jpg' : '/static/images/stonebrown-gba1689dda_640-min.jpg'}
 							alt='Lion'
@@ -96,14 +95,14 @@ const Index = () => {
 						/>
 					</div>
 
-					<div className='row-span-1'>
+					<div className='row-span-1 fadein'>
 						<h2 className='dark:animate-textColor'>Lion, Sassbook AI Story Writer</h2>
 						<p>
 							Lion was a little chap. He looked like a cat, with a round nose and a short tail. His eyes were always on me as I entered the room, his ears were pricked forward, he was as silent as a mouse, like the cat. Now and then he would turn his eyes in my direction and look as meek as the little mouse. &quot; I thought you said you were going straight to the wedding&quot;, said Ralph, in a low voice. Lion took a step toward him, almost afraid to touch him. Not at a word did the other tell his host that Lion was going straight to the wedding. &quot;Well&quot;, I said to Ralph. And then Lion ran to him and kissed him for the first time in his life.
 						</p>
 					</div>
 
-					<div className='relative row-span-2 md:row-span-3 min-h-[350px]'>
+					<div className='relative row-span-2 md:row-span-3 min-h-[350px] fadein'>
 						<Image
 							src={theme == 'dark' ? '/static/images/floral-gf53e5d3f7_640-min.png' : '/static/images/stonegreen-ge638a8717_640-min.jpg'}
 							alt='Octopus'
@@ -113,14 +112,14 @@ const Index = () => {
 						/>
 					</div>
 
-					<div className='row-span-1'>
+					<div className='row-span-1 fadein'>
 						<h2 className='dark:animate-textColor'>Octopus in a briefcase</h2>
 						<p>
 							Octopus in a briefcase, a creature so small that it had been shrunk to almost the size of a human, had the entire back half of its body encased in the case. Its eyes were black and slits, its arms were thin and powerful. At the first minute of my death, I&apos;d be returned to its home. With a small, soft, human hand, the octopus would make sure I got back to my home, to a home I had never been to, a place I never wanted.
 						</p>
 					</div>
 
-					<div className='relative row-span-2 min-h-[350px]'>
+					<div className='relative row-span-2 min-h-[350px] fadein'>
 						<Image
 							src={theme == 'dark' ? '/static/images/sea-g7b36c973c_1280.jpg' : '/static/images/stoneblue-g2e266dc48_640-min.jpg'}
 							alt='Fish'
@@ -130,7 +129,7 @@ const Index = () => {
 						/>
 					</div>
 
-					<div className='row-span-1' id='link2'>
+					<div className='row-span-1 fadein' id='link2'>
 						<h2 className='dark:animate-textColor'>Fish sticks</h2>
 						<p>
 							Fish sticks are not to my taste, he declared. They are too good for the sea. He was right. The fish sticks were too perfect for sea food. And there I left him, feeling that I was on a certain level with the great ocean, and that my life was complete.
