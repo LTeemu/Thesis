@@ -2,7 +2,7 @@ import Mug from '../components/Mug'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import { useEffect } from 'react'
-import { gsap } from 'gsap/dist/gsap'
+import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Companies from '../components/Companies'
 import Head from 'next/head'
@@ -13,9 +13,11 @@ const Index = () => {
 
 	useEffect(() => {
 		gsap.utils.toArray('.fadein').forEach((element) => {
-			gsap.fromTo(
-				element,
-				{ y: 0, opacity: 0.4 },
+			gsap.fromTo(element,
+				{
+					y: 0,
+					opacity: 0.4
+				},
 				{
 					y: 0,
 					ease: 'linear',
@@ -25,8 +27,6 @@ const Index = () => {
 						trigger: element,
 						start: 'top 90%',
 						end: 'bottom 10%',
-						//once: true,
-						//markers: true,
 						toggleActions: 'play reverse play reverse'
 					},
 				}

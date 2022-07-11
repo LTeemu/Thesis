@@ -16,7 +16,7 @@ const ToggleBorder = () => {
   }, [bordersVisible])
 
   return (
-    <button aria-label='Toggle border' onClick={() => setBordersVisible(!bordersVisible)}>
+    <button type='button' aria-label='Toggle border' onClick={() => setBordersVisible(!bordersVisible)}>
       {bordersVisible ? <BsBorder size={40} color="#ea2e6e" /> : <BsBorderAll size={40} color="#ea2e6e" />}
     </button>
   )

@@ -16,7 +16,7 @@ const Navbar = () => {
 			<div className='flex-row hidden md:flex ml-children'>
 				{links.map((link, index) =>
 					<Link href={link.href} key={index}>
-						<a className='text-xl font-bold hover:text-[#744622] dark:hover:text-cyan-300'>{link.title}</a>
+						<a title={link.title} className='text-xl font-bold hover:text-[#744622] dark:hover:text-cyan-300'>{link.title}</a>
 					</Link>
 				)}
 			</div>
