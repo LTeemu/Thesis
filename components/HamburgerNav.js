@@ -2,7 +2,9 @@ import { useEffect, useRef } from 'react'
 import { gsap, Linear, Back } from 'gsap'
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import Hamburger from './Hamburger'
-import Links from './Links'
+import Link from 'next/link'
+import { links } from '../public/static/data'
+
 gsap.registerPlugin(ScrollToPlugin)
 
 const HamburgerNav = ({ navOpen, setNavOpen }) => {
@@ -25,8 +27,12 @@ const HamburgerNav = ({ navOpen, setNavOpen }) => {
     <>
       <Hamburger navOpen={navOpen} setNavOpen={setNavOpen} />
       <div id="navContainer" className='z-50 absolute top-[66px] right-6 md:hidden dark:bg-darksecondary bg-slate-200 shadow-[inset_0_0_6px_0px_rgba(0,0,0,0.5)] rounded-b-2xl hidden'>
-        <div id='linkContainer' className="flex flex-col p-4 text-xl md:hidden my-children">
-          <Links />
+        <div id='linkContainer' className="flex flex-col p-4 md:hidden my-children">
+          {links.map((link, index) =>
+            <Link href={link.href} key={index}>
+              <a className='text-xl font-bold hover:text-[#865125] dark:hover:text-cyan-300'>{link.title}</a>
+            </Link>
+          )}
         </div>
       </div>
     </>
