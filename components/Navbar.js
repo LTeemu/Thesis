@@ -9,7 +9,6 @@ import { gsap, Power4 } from 'gsap';
 
 const Navbar = () => {
 	const [navOpen, setNavOpen] = useState(false)
-
 	const router = useRouter()
 	const tl = gsap.timeline();
 
@@ -45,7 +44,7 @@ const Navbar = () => {
 			<div className='flex-row hidden md:flex ml-children'>
 				{links.map((link, index) =>
 					<Link href={link.href} key={index}>
-						<a onClick={e => handleLink(e, link.href)} title={link.title} className='text-xl font-bold hover:text-[#744622] dark:hover:text-cyan-300'>{link.title}</a>
+						<a onClick={e => handleLink(e, link.href)} title={link.title} className={`text-xl font-bold ${link.href === router.asPath ? 'text-pink-500 pointer-events-none cursor-default' : 'dark:hover:text-cyan-300 hover:text-[#865125]'}`}>{link.title}</a>
 					</Link>
 				)}
 			</div>

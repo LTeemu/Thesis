@@ -4,15 +4,19 @@ import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import Hamburger from './Hamburger'
 import Link from 'next/link'
 import { links } from '../public/static/data'
+import { useRouter } from 'next/router'
 
 gsap.registerPlugin(ScrollToPlugin)
 
 const HamburgerNav = ({ navOpen, setNavOpen, handleLink }) => {
   const navTL = useRef()
+  const router = useRouter()
 
   const linkPress = (e, href) => {
-    handleLink(e, href)
-    setNavOpen(false)
+    if (href !== router.asPath) {
+      handleLink(e, href)
+      setNavOpen(false)
+    }
   }
 
   useEffect(() => {
@@ -25,6 +29,11 @@ const HamburgerNav = ({ navOpen, setNavOpen, handleLink }) => {
   }, [])
 
   useEffect(() => {
+    console.log(router.asPath)
+  }, [router])
+
+
+  useEffect(() => {
     navOpen ? navTL.current.timeScale(2).play() : navTL.current.timeScale(5).reverse()
   }, [navOpen])
 
@@ -35,7 +44,7 @@ const HamburgerNav = ({ navOpen, setNavOpen, handleLink }) => {
         <div id='linkContainer' className="flex flex-col p-4 md:hidden my-children">
           {links.map((link, index) =>
             <Link href={link.href} key={index}>
-              <a title={link.title} onClick={e => linkPress(e, link.href)} className='text-xl font-bold hover:text-[#865125] dark:hover:text-cyan-300'>{link.title}</a>
+              <a title={link.title} onClick={e => linkPress(e, link.href)} className={`text-xl font-bold ${link.href === router.asPath ? 'text-pink-500 pointer-events-none cursor-default' : 'dark:hover:text-cyan-300 hover:text-[#865125]'}`}  > {link.title}</a>
             </Link>
           )}
         </div>
