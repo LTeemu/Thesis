@@ -13,8 +13,6 @@ const Custom404 = () => {
           alt='404 Note'
           layout='fill'
           objectFit='contain'
-          width='100%'
-          height='100%'
         />
       </div>
     </div>
