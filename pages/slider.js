@@ -20,19 +20,16 @@ const Slider = () => {
       tolerance: 30,
       onRight: () => {
         if (!animating.current) {
-          console.log("up");
           gotoSection(-1);
         }
       },
       onLeft: () => {
         if (!animating.current) {
-          console.log("down");
           gotoSection(+1);
         }
       },
       onWheel: () => {
         if (!animating.current) {
-          console.log(observer.velocityY);
           if (observer.velocityY < 0) {
             gotoSection(-1);
           }
