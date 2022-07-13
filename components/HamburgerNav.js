@@ -29,11 +29,6 @@ const HamburgerNav = ({ navOpen, setNavOpen, handleLink }) => {
   }, [])
 
   useEffect(() => {
-    console.log(router.asPath)
-  }, [router])
-
-
-  useEffect(() => {
     navOpen ? navTL.current.timeScale(2).play() : navTL.current.timeScale(5).reverse()
   }, [navOpen])
 

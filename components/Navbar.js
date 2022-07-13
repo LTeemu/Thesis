@@ -39,7 +39,7 @@ const Navbar = () => {
 	return (
 		<div className='flex justify-between h-[50px] my-2 items-center px-6'>
 			<Link href="/">
-				<a className='text-4xl font-bold'>Logo</a>
+				<a onClick={e => handleLink(e, '/')} className={`text-4xl font-bold ${router.asPath === '/' && 'cursor-default'}`}>Logo</a>
 			</Link>
 			<div className='flex-row hidden md:flex ml-children'>
 				{links.map((link, index) =>
