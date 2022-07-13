@@ -12,13 +12,6 @@ const HamburgerNav = ({ navOpen, setNavOpen, handleLink }) => {
   const navTL = useRef()
   const router = useRouter()
 
-  const linkPress = (e, href) => {
-    if (href !== router.asPath) {
-      handleLink(e, href)
-      setNavOpen(false)
-    }
-  }
-
   useEffect(() => {
     navTL.current = gsap.timeline({ defaults: { ease: Linear } })
     navTL.current
@@ -39,7 +32,7 @@ const HamburgerNav = ({ navOpen, setNavOpen, handleLink }) => {
         <div id='linkContainer' className="flex flex-col p-4 md:hidden my-children">
           {links.map((link, index) =>
             <Link href={link.href} key={index}>
-              <a title={link.title} onClick={e => linkPress(e, link.href)} className={`text-xl font-bold ${link.href === router.asPath ? 'text-pink-500 pointer-events-none cursor-default' : 'dark:hover:text-cyan-300 hover:text-[#865125]'}`}  > {link.title}</a>
+              <a title={link.title} onClick={e => handleLink(e, link.href)} className={`text-xl font-bold ${link.href === router.asPath ? 'text-pink-500 pointer-events-none cursor-default' : 'dark:hover:text-cyan-300 hover:text-[#865125]'}`}  > {link.title}</a>
             </Link>
           )}
         </div>

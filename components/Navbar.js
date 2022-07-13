@@ -17,6 +17,7 @@ const Navbar = () => {
 		if (href !== router.asPath) {
 			const tl = gsap.timeline();
 			tl.to('#transition', { opacity: 0, duration: 0.5, ease: Power4.easeOut, onComplete: () => router.push(href) })
+			navOpen && setNavOpen(false)
 		}
 	}
 
