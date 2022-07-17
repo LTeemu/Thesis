@@ -87,11 +87,11 @@ const Index = () => {
 				<div className='grid grid-cols-1 gap-10 px-6 py-12 md:grid-cols-2 max-w-[1400px]'>
 					<div className='relative row-span-2 min-h-[350px] fadein'>
 						<Image
-							src={theme == 'dark' ? '/static/images/gold-gb3c2c7cc9_640-min.jpg' : '/static/images/stonebrown-gba1689dda_640-min.jpg'}
+							src={theme == 'dark' ? '/static/images/gold.jpg' : '/static/images/stonebrown.jpg'}
 							alt='Lion'
 							layout='fill'
 							objectFit='cover'
-							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/lion-g8e83b75e5_640-min.png)]'}
+							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/lion.png)]'}
 						/>
 					</div>
 
@@ -104,11 +104,11 @@ const Index = () => {
 
 					<div className='relative row-span-2 md:row-span-3 min-h-[350px] fadein'>
 						<Image
-							src={theme == 'dark' ? '/static/images/floral-gf53e5d3f7_640-min.png' : '/static/images/stonegreen-ge638a8717_640-min.jpg'}
+							src={theme == 'dark' ? '/static/images/floral.png' : '/static/images/stonegreen.jpg'}
 							alt='Octopus'
 							layout='fill'
 							objectFit='cover'
-							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/octopus-g1e66bf027_640-min.png)]'}
+							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/octopus.png)]'}
 						/>
 					</div>
 
@@ -121,15 +121,15 @@ const Index = () => {
 
 					<div className='relative row-span-2 min-h-[350px] fadein'>
 						<Image
-							src={theme == 'dark' ? '/static/images/sea-g7b36c973c_1280.jpg' : '/static/images/stoneblue-g2e266dc48_640-min.jpg'}
+							src={theme == 'dark' ? '/static/images/sea.jpg' : '/static/images/stoneblue.jpg'}
 							alt='Fish'
 							layout='fill'
 							objectFit='cover'
-							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/fish-g2619bb8ac_640-min.png)]'}
+							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/fish.png)]'}
 						/>
 					</div>
 
-					<div className='row-span-1 fadein' id='link2'>
+					<div className='row-span-1 fadein'>
 						<h2 className='dark:animate-textColor'>Fish sticks</h2>
 						<p>
 							Fish sticks are not to my taste, he declared. They are too good for the sea. He was right. The fish sticks were too perfect for sea food. And there I left him, feeling that I was on a certain level with the great ocean, and that my life was complete.

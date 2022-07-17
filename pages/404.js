@@ -9,7 +9,7 @@ const Custom404 = () => {
       <h2>This page doesn&apos;t exist</h2>
       <div className='relative w-full h-full max-w-2xl'>
         <Image
-          src={'/static/images/oops-gbb906866a_1280-removebg-preview-min.png'}
+          src={'/static/images/oops.png'}
           alt='404 Note'
           layout='fill'
           objectFit='contain'

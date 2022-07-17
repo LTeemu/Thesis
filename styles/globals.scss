@@ -35,17 +35,17 @@ $bg-gradient: linear-gradient(180deg,
 
 .bg_slide1 {
   background-image: $bg-gradient,
-    url("https://cdn.pixabay.com/photo/2022/06/15/18/38/castle-7264439_960_720.jpg");
+    url("/static/images/cherry_blossoms.jpg");
 }
 
 .bg_slide2 {
   background-image: $bg-gradient,
-    url("https://cdn.pixabay.com/photo/2022/06/18/04/32/poppies-7269126_960_720.jpg");
+    url("/static/images/castle.jpg");
 }
 
 .bg_slide3 {
   background-image: $bg-gradient,
-    url("https://cdn.pixabay.com/photo/2019/10/18/05/04/tent-4558240_960_720.jpg");
+    url("/static/images/jellyfish.jpg");
 }
 
 #companies1>h2,
