@@ -27,27 +27,6 @@ p {
   font-size: 1.2rem;
 }
 
-$bg-gradient: linear-gradient(180deg,
-  rgba(0, 0, 0, 0.7) 0%,
-  rgba(0, 0, 0, 0.7) 25%,
-  rgba(0, 0, 0, 0.7) 75%,
-  rgba(0, 0, 0, 0.7) 100%);
-
-.bg_slide1 {
-  background-image: $bg-gradient,
-    url("/static/images/cherry_blossoms.jpg");
-}
-
-.bg_slide2 {
-  background-image: $bg-gradient,
-    url("/static/images/castle.jpg");
-}
-
-.bg_slide3 {
-  background-image: $bg-gradient,
-    url("/static/images/jellyfish.jpg");
-}
-
 #companies1>h2,
 #companies2>h2,
 #companies3>h2 {
