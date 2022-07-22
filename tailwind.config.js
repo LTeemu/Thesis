@@ -17,7 +17,10 @@ module.exports = {
 				lightsecondary: '#e2e8f0',
 				darkprimary: '#1e293b',
 				darksecondary: '#131C2A'
-			}
+			},
+			screens: {
+				'7xl': '80rem',
+			},
 		},
 	},
 	plugins: [],

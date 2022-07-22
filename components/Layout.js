@@ -3,6 +3,7 @@ import Footer from './Footer'
 import ScrollTop from './ScrollTop.js'
 
 const Layout = ({ children }) => {
+
 	return (
 		<div>
 			<Navbar />
