@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { useEffect, useRef } from 'react'
-import { gsap, Expo } from 'gsap'
-import { Observer } from 'gsap/dist/Observer'
 import Image from 'next/image'
+import { useEffect, useRef } from 'react'
+import { gsap, Expo, Elastic } from 'gsap'
+import { Observer } from 'gsap/dist/Observer'
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md'
 
 gsap.registerPlugin(Observer);
@@ -12,6 +12,7 @@ const Slider = () => {
   const index = useRef(0)
   const slides = useRef()
   const wrap = useRef()
+  const tl = useRef()
 
   useEffect(() => {
     slides.current = gsap.utils.toArray('.slide')
@@ -20,7 +21,7 @@ const Slider = () => {
     const observer = Observer.create({
       target: window,
       type: "wheel, touch",
-      tolerance: 30,
+      tolerance: 50,
       onRight: () => {
         gotoSection(-1);
       },
@@ -47,20 +48,19 @@ const Slider = () => {
 
       let oldIndex = index.current;
       let newIndex = wrap.current(index.current + direction);
-
-      let tl = gsap.timeline({
-        defaults: { duration: 1, ease: Expo.easeInOut },
-        onComplete: () => { animating.current = false }
+      tl.current = gsap.timeline({
+        defaults: { ease: Expo.easeOut, duration: 1 }
       })
 
-      tl.set(slides.current[oldIndex], { zIndex: 10 })
-        .set(slides.current[newIndex], { xPercent: 0, display: 'flex', })
-        .set('.slider_arrow', { opacity: 0, pointerEvents: 'none' })
+      tl.current
+        .set(slides.current[oldIndex], { zIndex: 10 })
+        .set(slides.current[newIndex], { xPercent: 0, autoAlpha: 1, }, '<')
+        .set('.slider_arrow', { autoAlpha: 0, pointerEvents: 'none' }, '<')
+        .addLabel('slideStart', '>')
         .fromTo(slides.current[oldIndex], { xPercent: 0 }, { xPercent: direction * -100 }, '<')
-        .fromTo(`.slideText${newIndex}`, { opacity: 0, y: 10 }, { opacity: 1, y: 0, stagger: 0.25, ease: Expo.easeOut }, '<+0.6')
-        .set(slides.current[oldIndex], { display: 'hidden', zIndex: 0 })
-        .set('.slider_arrow', { opacity: 1, pointerEvents: 'all' })
-      index.current = newIndex;
+        .set(slides.current[oldIndex], { autoAlpha: 0, zIndex: 0 }, '>')
+        .fromTo(`.slideText${newIndex}`, { autoAlpha: 0, y: 10 }, { autoAlpha: 1, y: 0, stagger: 0.2 }, 'slideStart')
+        .set('.slider_arrow', { autoAlpha: 1, pointerEvents: 'all', onComplete: () => { index.current = newIndex, animating.current = false } }, '>')
     }
   }
   return (
@@ -68,29 +68,29 @@ const Slider = () => {
       <Head><title>{'TL - Slider'}</title></Head>
       <div className='w-screen h-[calc(100vh_-_66px_-_65px)] flex text-slate-100'>
 
-        <button className='absolute left-0 z-20 top-[50%] translate-y-[-50%] ml-1 duration-300 slider_arrow' onClick={() => gotoSection(-1)}>
+        <button className='absolute left-0 z-20 top-[50%] translate-y-[-50%] ml-1 slider_arrow' onClick={() => gotoSection(-1)}>
           <MdKeyboardArrowLeft size={30} />
         </button>
 
-        <button className='absolute right-0 z-20 top-[50%] translate-y-[-50%] mr-1 duration-300 slider_arrow' onClick={() => gotoSection(+1)}>
+        <button className='absolute right-0 z-20 top-[50%] translate-y-[-50%] mr-1 slider_arrow' onClick={() => gotoSection(+1)}>
           <MdKeyboardArrowRight size={30} />
         </button>
 
-        <div className='fixed flex-col w-full h-[calc(100vh_-_66px_-_59.2px)] px-10 bg-center bg-cover flex items-center justify-center slide'>
+        <div className='flex fixed flex-col w-full h-[calc(100vh_-_66px_-_59.2px)] px-10 bg-center bg-cover items-center justify-center slide'>
           <Image src='/static/images/cherry_blossoms.jpg' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/cherry_blossoms.jpg' priority />
           <div className='w-screen h-full bg-[rgba(0,0,0,0.6)] absolute -z-40'></div>
           <h1 className='slideText0'>Slide 1</h1>
           <p className='slideText0'>Mouse Scroll or Swipe Horizontally. <br /> Made with GSAP Observer</p>
         </div>
 
-        <div className='fixed w-full h-[calc(100vh_-_66px_-_59.2px)] hidden px-10 bg-cover items-center flex-col justify-center slide bg_slide2'>
+        <div className='flex fixed w-full h-[calc(100vh_-_66px_-_59.2px)] invisible px-10 bg-cover items-center flex-col justify-center slide bg_slide2'>
           <Image src='/static/images/castle.jpg' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/castle.jpg' />
           <div className='w-screen h-full bg-[rgba(0,0,0,0.6)] absolute -z-40'></div>
           <h1 className='slideText1'>Slide 2</h1>
           <p className='max-w-5xl slideText1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nisl eu nunc mollis sagittis. Donec sagittis tincidunt dignissim. Vestibulum consectetur risus augue, at mollis nulla lacinia et. Donec ac risus quis magna blandit laoreet eget at tellus. Cras vel tellus euismod, volutpat quam eget, pretium leo. Aliquam egestas dapibus auctor.</p>
         </div>
 
-        <div className='fixed w-full h-[calc(100vh_-_66px_-_59.2px)] hidden px-10 bg-cover slide items-center flex-col justify-center bg_slide3'>
+        <div className='flex fixed w-full h-[calc(100vh_-_66px_-_59.2px)] invisible px-10 bg-cover slide items-center flex-col justify-center bg_slide3'>
           <Image src='/static/images/jellyfish.jpg' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/jellyfish.jpg' />
           <div className='w-screen h-full bg-[rgba(0,0,0,0.6)] absolute -z-40'></div>
           <h1 className='slideText2'>Slide 3</h1>

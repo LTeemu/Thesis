@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import HamburgerNav from './HamburgerNav'
 import Darkbtn from './Darkbtn'
 import ToggleBorder from './ToggleBorder'
@@ -10,20 +10,20 @@ import { gsap, Power4 } from 'gsap';
 const Navbar = () => {
 	const [navOpen, setNavOpen] = useState(false)
 	const router = useRouter()
-	const tl = gsap.timeline();
+	const transitionTL = useRef()
+	transitionTL.current = gsap.timeline();
 
 	const handleLink = (e, href) => {
 		e.preventDefault();
 		if (href !== router.asPath) {
-			const tl = gsap.timeline();
-			tl.to('#transition', { opacity: 0, duration: 0.5, ease: Power4.easeOut, onComplete: () => router.push(href) })
+			transitionTL.current.to('#transition', { opacity: 0, duration: 0.5, ease: Power4.easeOut, onComplete: () => router.push(href) })
 			navOpen && setNavOpen(false)
 		}
 	}
 
 	useEffect(() => {
 		const routeChangeAnim = () => {
-			tl.to('#transition', {
+			transitionTL.current.to('#transition', {
 				opacity: 1,
 				duration: 0.5,
 				ease: Power4.easeIn,
