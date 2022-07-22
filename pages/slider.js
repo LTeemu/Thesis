@@ -77,21 +77,21 @@ const Slider = () => {
         </button>
 
         <div className='flex fixed flex-col w-full h-[calc(100vh_-_66px_-_59.2px)] px-10 bg-center bg-cover items-center justify-center slide'>
-          <Image src='/static/images/cherry_blossoms.jpg' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/cherry_blossoms.jpg' priority />
+          <Image src='/static/images/cherry_blossoms.jpg' alt='Cherry Blossoms' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/cherry_blossoms.jpg' priority />
           <div className='w-screen h-full bg-[rgba(0,0,0,0.6)] absolute -z-40'></div>
           <h1 className='slideText0'>Slide 1</h1>
           <p className='slideText0'>Mouse Scroll or Swipe Horizontally. <br /> Made with GSAP Observer</p>
         </div>
 
         <div className='flex fixed w-full h-[calc(100vh_-_66px_-_59.2px)] invisible px-10 bg-cover items-center flex-col justify-center slide bg_slide2'>
-          <Image src='/static/images/castle.jpg' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/castle.jpg' />
+          <Image src='/static/images/castle.jpg' alt='Castle' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/castle.jpg' />
           <div className='w-screen h-full bg-[rgba(0,0,0,0.6)] absolute -z-40'></div>
           <h1 className='slideText1'>Slide 2</h1>
           <p className='max-w-5xl slideText1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nisl eu nunc mollis sagittis. Donec sagittis tincidunt dignissim. Vestibulum consectetur risus augue, at mollis nulla lacinia et. Donec ac risus quis magna blandit laoreet eget at tellus. Cras vel tellus euismod, volutpat quam eget, pretium leo. Aliquam egestas dapibus auctor.</p>
         </div>
 
         <div className='flex fixed w-full h-[calc(100vh_-_66px_-_59.2px)] invisible px-10 bg-cover slide items-center flex-col justify-center bg_slide3'>
-          <Image src='/static/images/jellyfish.jpg' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/jellyfish.jpg' />
+          <Image src='/static/images/jellyfish.jpg' alt='Jellyfish' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/jellyfish.jpg' />
           <div className='w-screen h-full bg-[rgba(0,0,0,0.6)] absolute -z-40'></div>
           <h1 className='slideText2'>Slide 3</h1>
           <p className='max-w-5xl slideText2'>In hac habitasse platea dictumst. Donec malesuada ipsum magna, sed pharetra eros malesuada vitae. Morbi ornare lorem feugiat elit ullamcorper, non sodales nulla sodales. Proin vel lacus consequat, gravida felis id, pellentesque ex. Maecenas id consectetur ipsum. Duis purus lectus, aliquet porttitor facilisis quis, aliquet eget eros. Morbi placerat odio in est dapibus facilisis. </p>
