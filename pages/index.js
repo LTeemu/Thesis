@@ -14,15 +14,9 @@ const Index = () => {
 	useEffect(() => {
 		gsap.utils.toArray('.fadein').forEach((element) => {
 			gsap.fromTo(element,
+				{ y: 0, opacity: 0.4 },
 				{
-					y: 0,
-					opacity: 0.4
-				},
-				{
-					y: 0,
-					ease: 'linear',
-					opacity: 1,
-					duration: 0.5,
+					y: 0, ease: 'linear', opacity: 1, duration: 0.5,
 					scrollTrigger: {
 						trigger: element,
 						start: 'top 90%',
@@ -46,30 +40,16 @@ const Index = () => {
 				<div className='flex flex-col justify-center'>
 					<h1 className='dark:animate-textColor'>Coffee mug</h1>
 					<p>
-						{' '}
-						<a
-							href='https://pixabay.com/fi/vectors/kahvia-kuppi-kahvia-kuppi-kofeiini-5009730/'
-							target='_blank'
-							rel='noreferrer'
-							className='font-bold text-cyan-600'
-						>
+						<a href='https://pixabay.com/fi/vectors/kahvia-kuppi-kahvia-kuppi-kofeiini-5009730/' target='_blank' rel='noreferrer' className='font-bold text-cyan-600'>
 							SVG image
-						</a>{' '}
-						from Pixabay, animated with{' '}
-						<a
-							href='https://greensock.com/'
-							target='_blank'
-							rel='noreferrer'
-							className='text-[#499110] font-extrabold'
-						>
+						</a>
+						from Pixabay, animated with
+						<a href='https://greensock.com/' target='_blank' rel='noreferrer' className='text-[#499110] font-extrabold'>
 							GSAP
 						</a>
 					</p>
 				</div>
-				<div
-					id='grid'
-					className='flex items-center justify-center min-h-[60vh]'
-				>
+				<div id='grid' className='flex items-center justify-center min-h-[60vh]'>
 					<Mug />
 				</div>
 			</div>
@@ -87,11 +67,11 @@ const Index = () => {
 				<div className='grid grid-cols-1 gap-10 px-6 py-12 md:grid-cols-2 max-w-[1400px]'>
 					<div className='relative row-span-2 min-h-[350px] fadein'>
 						<Image
-							src={theme == 'dark' ? '/static/images/gold.jpg' : '/static/images/stonebrown.jpg'}
+							src={theme == 'dark' ? '/static/images/gold.webp' : '/static/images/stonebrown.webp'}
 							alt='Lion'
 							layout='fill'
 							objectFit='cover'
-							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/lion.png)]'}
+							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/lion.webp)]'}
 						//priority
 						/>
 					</div>
@@ -105,11 +85,11 @@ const Index = () => {
 
 					<div className='relative row-span-2 md:row-span-3 min-h-[350px] fadein'>
 						<Image
-							src={theme == 'dark' ? '/static/images/floral.png' : '/static/images/stonegreen.jpg'}
+							src={theme == 'dark' ? '/static/images/floral.webp' : '/static/images/stonegreen.webp'}
 							alt='Octopus'
 							layout='fill'
 							objectFit='cover'
-							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/octopus.png)]'}
+							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/octopus.webp)]'}
 						/>
 					</div>
 
@@ -122,11 +102,11 @@ const Index = () => {
 
 					<div className='relative row-span-2 min-h-[350px] fadein'>
 						<Image
-							src={theme == 'dark' ? '/static/images/sea.jpg' : '/static/images/stoneblue.jpg'}
+							src={theme == 'dark' ? '/static/images/sea.webp' : '/static/images/stoneblue.webp'}
 							alt='Fish'
 							layout='fill'
 							objectFit='cover'
-							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/fish.png)]'}
+							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/fish.webp)]'}
 						/>
 					</div>
 
