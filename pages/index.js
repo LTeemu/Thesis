@@ -72,7 +72,6 @@ const Index = () => {
 							layout='fill'
 							objectFit='cover'
 							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/lion.webp)]'}
-						//priority
 						/>
 					</div>
 

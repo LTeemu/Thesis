@@ -11,6 +11,7 @@ const Lotties = () => {
       loop: true,
       autoplay: true,
       animationData: require('../public/static/lottie/enjoying-sloth.json'),
+      rendererSettings: { className: 'aspect-square' }
     });
     return () => animation.destroy();
   }, [])
@@ -20,7 +21,7 @@ const Lotties = () => {
       <div className='mx-auto max-w-7xl'>
         <div className='7xl:border-l-[#d7743e] 7xl:border-b-[#31a56bee] 7xl:border-l-[0.25rem] 7xl:border-b-[0.25rem] rounded-bl-[33%] pr-6'>
           <div className='flex max-h-[600px] relative'>
-            <div ref={lottieRef} className='w-[50vw] max-w-[600px]'></div>
+            <div ref={lottieRef} className='w-[50vw] max-w-[600px] aspect-square'></div>
             <h1 className='flex m-auto text-3xl font-extrabold tracking-wider text-transparent md:text-5xl sm:text-4xl'>
               <a href='https://lottiefiles.com/108020-enjoying-sloth' alt="Lottie Sloth" target={'_blank'} rel="noreferrer" className='bg-clip-text from-green-500 to-orange-500 bg-gradient-to-tr'>Lottie Sloth</a>
             </h1>

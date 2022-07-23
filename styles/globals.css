@@ -1,11 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html {
   -webkit-text-size-adjust: 100%;
-     -moz-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-          text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -29,9 +30,9 @@ p {
   font-size: 1.2rem;
 }
 
-#companies1 > h2,
-#companies2 > h2,
-#companies3 > h2 {
+#companies1>h2,
+#companies2>h2,
+#companies3>h2 {
   margin: 0 1rem 0 1rem;
 }
 
@@ -39,11 +40,11 @@ p {
   outline: solid 1px #ea2e6e;
 }
 
-.my-children > *:not(:first-child) {
+.my-children>*:not(:first-child) {
   margin-top: 1em;
 }
 
-.ml-children > *:not(:first-child) {
+.ml-children>*:not(:first-child) {
   margin-left: 1em;
 }
 
@@ -66,29 +67,37 @@ p {
 }
 
 #sun-shadow1 {
-  -webkit-box-shadow: 15px 0 0 0 #e3b566, -15px 0 0 0 #e3b566;
-          box-shadow: 15px 0 0 0 #e3b566, -15px 0 0 0 #e3b566;
+  -webkit-box-shadow: 15px 0 0 0 #e3b566,
+    -15px 0 0 0 #e3b566;
+  box-shadow: 15px 0 0 0 #e3b566,
+    -15px 0 0 0 #e3b566;
 }
 
 #sun-shadow2 {
-  -webkit-box-shadow: 15px 0 0 0 #e3b566, -15px 0 0 0 #e3b566;
-          box-shadow: 15px 0 0 0 #e3b566, -15px 0 0 0 #e3b566;
+  -webkit-box-shadow: 15px 0 0 0 #e3b566,
+    -15px 0 0 0 #e3b566;
+  box-shadow: 15px 0 0 0 #e3b566,
+    -15px 0 0 0 #e3b566;
   -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 #sun-shadow3 {
-  -webkit-box-shadow: 15px 0 0 0 #d4a149, -15px 0 0 0 #d4a149;
-          box-shadow: 15px 0 0 0 #d4a149, -15px 0 0 0 #d4a149;
+  -webkit-box-shadow: 15px 0 0 0 #d4a149,
+    -15px 0 0 0 #d4a149;
+  box-shadow: 15px 0 0 0 #d4a149,
+    -15px 0 0 0 #d4a149;
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 #sun-shadow4 {
-  -webkit-box-shadow: 15px 0 0 0 #d4a149, -15px 0 0 0 #d4a149;
-          box-shadow: 15px 0 0 0 #d4a149, -15px 0 0 0 #d4a149;
+  -webkit-box-shadow: 15px 0 0 0 #d4a149,
+    -15px 0 0 0 #d4a149;
+  box-shadow: 15px 0 0 0 #d4a149,
+    -15px 0 0 0 #d4a149;
   -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 /* Focusing the button with a keyboard */
@@ -110,22 +119,25 @@ p {
   0% {
     text-shadow: greenyellow -1px 1.25px 1px;
     -webkit-filter: blur(0.5px);
-            filter: blur(0.5px);
+    filter: blur(0.5px);
   }
+  
   20% {
     text-shadow: cyan 1.25px -1.5px 1px;
     -webkit-filter: blur(0.5px);
-            filter: blur(0.5px);
+    filter: blur(0.5px);
   }
+  
   80% {
     text-shadow: red 1px 1.75px 1px;
     -webkit-filter: blur(0.5px);
-            filter: blur(0.5px);
+    filter: blur(0.5px);
   }
+  
   100% {
     text-shadow: yellow -1.25px 1.25px 1px;
     -webkit-filter: blur(0.5px);
-            filter: blur(0.5px);
+    filter: blur(0.5px);
   }
 }
 
@@ -133,22 +145,26 @@ p {
   0% {
     text-shadow: greenyellow -1px 1.25px 1px;
     -webkit-filter: blur(0.5px);
-            filter: blur(0.5px);
+    filter: blur(0.5px);
   }
+  
   20% {
     text-shadow: cyan 1.25px -1.5px 1px;
     -webkit-filter: blur(0.5px);
-            filter: blur(0.5px);
+    filter: blur(0.5px);
   }
+  
   80% {
     text-shadow: red 1px 1.75px 1px;
     -webkit-filter: blur(0.5px);
-            filter: blur(0.5px);
+    filter: blur(0.5px);
   }
+  
   100% {
     text-shadow: yellow -1.25px 1.25px 1px;
     -webkit-filter: blur(0.5px);
-            filter: blur(0.5px);
+    filter: blur(0.5px);
   }
 }
+
 /*# sourceMappingURL=globals.css.map */

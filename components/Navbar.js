@@ -16,7 +16,7 @@ const Navbar = () => {
 	const handleLink = (e, href) => {
 		e.preventDefault();
 		if (href !== router.asPath) {
-			transitionTL.current.to('#transition', { opacity: 0, duration: 0.5, ease: Power4.easeOut, onComplete: () => router.push(href) })
+			transitionTL.current.to('#transition', { opacity: 0, duration: 0.4, ease: Power4.easeOut, onComplete: () => router.push(href) })
 			navOpen && setNavOpen(false)
 		}
 	}
@@ -25,7 +25,7 @@ const Navbar = () => {
 		const routeChangeAnim = () => {
 			transitionTL.current.to('#transition', {
 				opacity: 1,
-				duration: 0.5,
+				duration: 0.4,
 				ease: Power4.easeIn,
 			});
 		}
