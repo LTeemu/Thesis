@@ -11,8 +11,10 @@ const Lotties = () => {
       loop: true,
       autoplay: true,
       animationData: require('../public/static/lottie/enjoying-sloth.json'),
-      rendererSettings: { className: 'aspect-square' }
+      rendererSettings: { className: 'aspect-square' },
     });
+    animation.setSpeed(0.6)
+
     return () => animation.destroy();
   }, [])
 
