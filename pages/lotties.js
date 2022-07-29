@@ -25,7 +25,7 @@ const Lotties = () => {
           <div className='flex max-h-[600px] relative'>
             <div ref={lottieRef} className='w-[50vw] max-w-[600px] aspect-square'></div>
             <h1 className='flex m-auto text-3xl font-extrabold tracking-wider text-transparent md:text-5xl sm:text-4xl'>
-              <a href='https://lottiefiles.com/108020-enjoying-sloth' alt="Lottie Sloth" target={'_blank'} rel="noreferrer" className='bg-clip-text from-green-500 to-orange-500 bg-gradient-to-tr'>Lottie Sloth</a>
+              <a href='https://lottiefiles.com/108020-enjoying-sloth' alt="Lottie Sloth" target={'_blank'} rel="noreferrer" className='gradientBG'>Lottie Sloth</a>
             </h1>
           </div>
         </div>

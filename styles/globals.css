@@ -155,4 +155,32 @@ svg {
             filter: blur(0.5px);
   }
 }
+
+.gradientBG {
+  -webkit-animation: gradientAnim 5s linear infinite;
+          animation: gradientAnim 5s linear infinite;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #d38123), color-stop(20%, #72a743), color-stop(40%, #3eba54), color-stop(50%, #d38123), color-stop(60%, #d38123), color-stop(70%, #72a743), color-stop(90%, #3eba54), to(#d38123));
+  background: linear-gradient(90deg, #d38123 10%, #72a743 20%, #3eba54 40%, #d38123 50%, #d38123 60%, #72a743 70%, #3eba54 90%, #d38123 100%);
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-clip: text;
+}
+
+@-webkit-keyframes gradientAnim {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: 100% center;
+  }
+}
+
+@keyframes gradientAnim {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: 100% center;
+  }
+}
 /*# sourceMappingURL=globals.css.map */

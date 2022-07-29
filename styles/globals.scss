@@ -132,3 +132,21 @@ svg {
     filter: blur(0.5px);
   }
 }
+
+.gradientBG {
+  animation: gradientAnim 5s linear infinite;
+  background: linear-gradient(90deg, #d38123 10%, #72a743 20%, #3eba54 40%, #d38123 50%, #d38123 60%, #72a743 70%, #3eba54 90%, #d38123 100%);
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-clip: text;
+}
+
+@keyframes gradientAnim {
+  from {
+    background-position: 0% center;
+  }
+  
+  to {
+    background-position: 100% center;
+  }
+}
