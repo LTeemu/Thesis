@@ -1,5 +1,8 @@
 Vercel URL: https://teemul.vercel.app/
 
+Next.js, GSAP, TailwindCSS <br>
+The goal was to learn how to build a nice single-page application (SPA), similar to the ones found on Awwwards and Godly.website.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
