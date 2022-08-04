@@ -83,14 +83,14 @@ const Slider = () => {
           <p className='slideText0'>Mouse Scroll or Swipe Horizontally. <br /> Made with GSAP Observer</p>
         </div>
 
-        <div className='flex fixed w-full h-[calc(100vh_-_66px_-_59.2px)] invisible px-10 bg-cover items-center flex-col justify-center slide bg_slide2'>
+        <div className='flex fixed w-full h-[calc(100vh_-_66px_-_59.2px)] invisible px-10 items-center flex-col justify-center slide'>
           <Image src='/static/images/castle.webp' alt='Castle' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/castle.webp' />
           <div className='w-screen h-full bg-[rgba(0,0,0,0.6)] absolute -z-40'></div>
           <h1 className='slideText1'>Slide 2</h1>
           <p className='max-w-5xl slideText1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nisl eu nunc mollis sagittis. Donec sagittis tincidunt dignissim. Vestibulum consectetur risus augue, at mollis nulla lacinia et. Donec ac risus quis magna blandit laoreet eget at tellus. Cras vel tellus euismod, volutpat quam eget, pretium leo. Aliquam egestas dapibus auctor.</p>
         </div>
 
-        <div className='flex fixed w-full h-[calc(100vh_-_66px_-_59.2px)] invisible px-10 bg-cover slide items-center flex-col justify-center bg_slide3'>
+        <div className='flex fixed w-full h-[calc(100vh_-_66px_-_59.2px)] invisible px-10 slide items-center flex-col justify-center slide'>
           <Image src='/static/images/jellyfish.webp' alt='Jellyfish' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/jellyfish.webp' />
           <div className='w-screen h-full bg-[rgba(0,0,0,0.6)] absolute -z-40'></div>
           <h1 className='slideText2'>Slide 3</h1>
