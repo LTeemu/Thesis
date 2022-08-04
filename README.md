@@ -1,8 +1,8 @@
-Vercel URL: https://teemul.vercel.app/
-
 Next.js, GSAP, TailwindCSS <br>
-The goal was to learn how to build a single page application (SPA) and use the technologies of my choice.
+The goal was to learn how to build a single page application (SPA) and use the technologies of my choice.<br/>
+https://teemul.vercel.app/
 <br/><br/>
+
 
 ---
 
