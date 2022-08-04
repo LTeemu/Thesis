@@ -2,10 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 import { gsap, Expo } from 'gsap'
-import { Observer } from 'gsap/dist/Observer'
 import { MdOutlineThumbDownOffAlt, MdOutlineThumbUpOffAlt } from 'react-icons/md'
-
-gsap.registerPlugin(Observer);
 
 const Cards = () => {
   const animating = useRef(false)
