@@ -1,7 +1,10 @@
 Vercel URL: https://teemul.vercel.app/
 
 Next.js, GSAP, TailwindCSS <br>
-The goal was to learn how to build a single-page application (SPA), animate with GSAP and style with TailwindCSS.
+The goal was to learn how to build a single page application (SPA) and use the technologies of my choice.
+<br/><br/>
+
+---
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
