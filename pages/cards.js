@@ -17,6 +17,20 @@ const Cards = () => {
 
     tl.current = gsap.timeline({ defaults: { ease: Expo.easeOut, duration: 1 } })
     tl.current.fromTo(cardStacks.current[0], { scale: 0 }, { scale: 1 })
+    cardStacks.current.forEach((stack, i) => {
+      stack.addEventListener("mouseenter", () => {
+        gsap.to(cardStacks.current[index.current].children[0], { rotate: 0, xPercent: -50, yPercent: -50 });
+        gsap.to(cardStacks.current[index.current].children[1], { rotate: 0, xPercent: 50, yPercent: -50 });
+        gsap.to(cardStacks.current[index.current].children[2], { rotate: 0, xPercent: -50, yPercent: 50 });
+        gsap.to(cardStacks.current[index.current].children[3], { rotate: 0, xPercent: 50, yPercent: 50 });
+      })
+      stack.addEventListener("mouseleave", (e) => {
+        gsap.to(cardStacks.current[index.current].children[0], { rotate: -18, xPercent: 0, yPercent: 0 });
+        gsap.to(cardStacks.current[index.current].children[1], { rotate: -6, xPercent: 0, yPercent: 0 });
+        gsap.to(cardStacks.current[index.current].children[2], { rotate: 6, xPercent: 0, yPercent: 0 });
+        gsap.to(cardStacks.current[index.current].children[3], { rotate: 18, xPercent: 0, yPercent: 0 });
+      })
+    })
   }, [])
 
   function gotoSection(direction) {
@@ -28,6 +42,10 @@ const Cards = () => {
 
       tl.current
         .set('.cardBtn', { opacity: 0.6, pointerEvents: 'none' })
+        .set(cardStacks.current[newIndex].children[0], { rotate: -18, xPercent: 0, yPercent: 0 })
+        .set(cardStacks.current[newIndex].children[1], { rotate: -6, xPercent: 0, yPercent: 0 })
+        .set(cardStacks.current[newIndex].children[2], { rotate: 6, xPercent: 0, yPercent: 0 })
+        .set(cardStacks.current[newIndex].children[3], { rotate: 18, xPercent: 0, yPercent: 0 })
         .to(cardStacks.current[oldIndex].children, { scale: 0, autoAlpha: 0, x: 100 * direction, stagger: { each: 0.1, from: "random" } }, '<')
         .fromTo(cardStacks.current[newIndex].children, { x: -100 * direction, scale: 0, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, x: 0, stagger: { each: 0.1, from: "random" }, onComplete: () => { index.current = newIndex, animating.current = false } }, '<')
         .set('.cardBtn', { opacity: 1, pointerEvents: 'all' }, '>')
@@ -61,7 +79,7 @@ const Cards = () => {
             <div className='bg-[rgba(222,93,248,0.5)] origin-bottom opacity-0 rotate-[18deg] aspect-[1/1.75] absolute h-[40%] rounded-xl'></div>
           </div>
 
-          <div className='absolute bottom-[5%] flex place-content-center gap-[25%]' >
+          <div className='flex absolute bottom-2 place-content-center gap-[15%]' >
             <button className='p-3 text-red-700 duration-300 rounded-full backdrop-invert-[10%] border-[3px] border-red-700 cardBtn' onClick={() => gotoSection(-1)}>
               <MdOutlineThumbDownOffAlt size={40} />
             </button>
@@ -71,6 +89,8 @@ const Cards = () => {
             </button>
           </div>
         </div>
+
+
       </div>
 
     </>
