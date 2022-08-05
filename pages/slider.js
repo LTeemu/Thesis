@@ -77,7 +77,7 @@ const Slider = () => {
         </button>
 
         <div className='flex fixed flex-col w-full h-[calc(100vh_-_66px_-_59.2px)] px-10 bg-center bg-cover items-center justify-center slide'>
-          <Image src='/static/images/cherry_blossoms.webp' alt='Cherry Blossoms' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/cherry_blossoms.webp' />
+          <Image src='/static/images/cherry_blossoms.webp' alt='Cherry Blossoms' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/cherry_blossoms.webp' priority={true} />
           <div className='w-screen h-full bg-[rgba(0,0,0,0.6)] absolute -z-40'></div>
           <h1 className='slideText0'>Slide 1</h1>
           <p className='slideText0'>Mouse Scroll or Swipe Horizontally. <br /> Made with GSAP Observer</p>

@@ -5,37 +5,18 @@ import ToggleBorder from './ToggleBorder'
 import Link from 'next/dist/client/link'
 import { links } from '../public/static/data'
 import { useRouter } from 'next/router'
-import { gsap, Power4 } from 'gsap';
 
 const Navbar = () => {
 	const [navOpen, setNavOpen] = useState(false)
 	const router = useRouter()
-	const transitionTL = useRef()
-	transitionTL.current = gsap.timeline();
 
 	const handleLink = (e, href) => {
 		e.preventDefault();
 		if (href !== router.asPath) {
-			transitionTL.current.to('#transition', { opacity: 0, duration: 0.4, ease: Power4.easeOut, onComplete: () => router.push(href) })
+			router.push(href)
 			navOpen && setNavOpen(false)
 		}
 	}
-
-	useEffect(() => {
-		const routeChangeAnim = () => {
-			transitionTL.current.to('#transition', {
-				opacity: 1,
-				duration: 0.4,
-				ease: Power4.easeIn,
-			});
-		}
-
-		router.events.on('routeChangeStart', routeChangeAnim);
-
-		return () => {
-			router.events.off('routeChangeStart', routeChangeAnim);
-		};
-	}, [router]);
 
 	return (
 		<div className='flex justify-between h-[50px] my-2 items-center px-6'>

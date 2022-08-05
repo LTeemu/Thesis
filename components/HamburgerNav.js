@@ -18,7 +18,6 @@ const HamburgerNav = ({ navOpen, setNavOpen, handleLink }) => {
       .fromTo('#navContainer', { display: 'none' }, { display: 'block' })
       .fromTo('#navContainer', { height: 0 }, { duration: 1.8, height: 'auto' }, '<')
       .fromTo('#linkContainer a', { opacity: 0, y: 10, pointerEvents: 'none' }, { opacity: 1, pointerEvents: 'auto', stagger: 0.3, duration: 0.3, y: 0, ease: Back.easeOut.config(4) }, '<+0.3')
-    //.fromTo('#navContainer', { borderTopLeftRadius: 0, borderTopRightRadius: 0 }, { borderTopLeftRadius: '1rem', borderTopRightRadius: '1rem' })
   }, [])
 
   useEffect(() => {

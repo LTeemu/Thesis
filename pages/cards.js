@@ -12,25 +12,35 @@ const Cards = () => {
   const tl = useRef()
 
   useEffect(() => {
+    const cardHover = () => {
+      gsap.to(cardStacks.current[index.current].children[0], { rotate: 0, xPercent: -50, yPercent: -50 });
+      gsap.to(cardStacks.current[index.current].children[1], { rotate: 0, xPercent: 50, yPercent: -50 });
+      gsap.to(cardStacks.current[index.current].children[2], { rotate: 0, xPercent: -50, yPercent: 50 });
+      gsap.to(cardStacks.current[index.current].children[3], { rotate: 0, xPercent: 50, yPercent: 50 });
+    }
+
+    const cardReset = () => {
+      gsap.to(cardStacks.current[index.current].children[0], { rotate: -18, xPercent: 0, yPercent: 0 });
+      gsap.to(cardStacks.current[index.current].children[1], { rotate: -6, xPercent: 0, yPercent: 0 });
+      gsap.to(cardStacks.current[index.current].children[2], { rotate: 6, xPercent: 0, yPercent: 0 });
+      gsap.to(cardStacks.current[index.current].children[3], { rotate: 18, xPercent: 0, yPercent: 0 });
+    }
+
     cardStacks.current = gsap.utils.toArray('#cardStack')
     wrap.current = gsap.utils.wrap(0, cardStacks.current.length)
-
     tl.current = gsap.timeline({ defaults: { ease: Expo.easeOut, duration: 1 } })
     tl.current.fromTo(cardStacks.current[0], { scale: 0 }, { scale: 1 })
-    cardStacks.current.forEach((stack, i) => {
-      stack.addEventListener("mouseenter", () => {
-        gsap.to(cardStacks.current[index.current].children[0], { rotate: 0, xPercent: -50, yPercent: -50 });
-        gsap.to(cardStacks.current[index.current].children[1], { rotate: 0, xPercent: 50, yPercent: -50 });
-        gsap.to(cardStacks.current[index.current].children[2], { rotate: 0, xPercent: -50, yPercent: 50 });
-        gsap.to(cardStacks.current[index.current].children[3], { rotate: 0, xPercent: 50, yPercent: 50 });
-      })
-      stack.addEventListener("mouseleave", (e) => {
-        gsap.to(cardStacks.current[index.current].children[0], { rotate: -18, xPercent: 0, yPercent: 0 });
-        gsap.to(cardStacks.current[index.current].children[1], { rotate: -6, xPercent: 0, yPercent: 0 });
-        gsap.to(cardStacks.current[index.current].children[2], { rotate: 6, xPercent: 0, yPercent: 0 });
-        gsap.to(cardStacks.current[index.current].children[3], { rotate: 18, xPercent: 0, yPercent: 0 });
-      })
+    cardStacks.current.forEach((stack) => {
+      stack.addEventListener("mouseenter", cardHover);
+      stack.addEventListener("mouseleave", cardReset);
     })
+
+    return () => {
+      cardStacks.current.forEach((stack) => {
+        stack.removeEventListener("mouseenter", cardHover);
+        stack.removeEventListener("mouseleave", cardReset);
+      })
+    }
   }, [])
 
   function gotoSection(direction) {
