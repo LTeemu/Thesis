@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+  .card {
+    @apply origin-bottom aspect-[1/1.75] absolute h-[40%] border-transparent border-8 rounded-xl;
+  }
+}
+
 html {
   -webkit-text-size-adjust: 100%;
      -moz-text-size-adjust: 100%;
