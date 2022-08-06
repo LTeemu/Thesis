@@ -1,9 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { BsBorderAll, BsBorder } from 'react-icons/bs'
 
-const ToggleBorder = () => {
-  const [bordersVisible, setBordersVisible] = useState(false)
-
+const ToggleBorder = ({ bordersVisible, setBordersVisible }) => {
   useEffect(() => {
     let divs = document.querySelectorAll('div')
     bordersVisible

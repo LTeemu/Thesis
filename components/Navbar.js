@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 
 const Navbar = () => {
 	const [navOpen, setNavOpen] = useState(false)
+	const [bordersVisible, setBordersVisible] = useState(false)
 	const router = useRouter()
 
 	const handleLink = (e, href) => {
@@ -15,6 +16,7 @@ const Navbar = () => {
 		if (href !== router.asPath) {
 			router.push(href)
 			navOpen && setNavOpen(false)
+			bordersVisible && setBordersVisible(false)
 		}
 	}
 
@@ -31,7 +33,7 @@ const Navbar = () => {
 				)}
 			</div>
 			<div className='flex items ml-children'>
-				<ToggleBorder />
+				<ToggleBorder bordersVisible={bordersVisible} setBordersVisible={setBordersVisible} />
 				<Darkbtn />
 				<HamburgerNav navOpen={navOpen} setNavOpen={setNavOpen} handleLink={handleLink} />
 			</div>
