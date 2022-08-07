@@ -67,8 +67,8 @@ const Cards = () => {
       : setCardsOne([rCard(), rCard(), rCard(), rCard()]);
   }
 
-  function clearOldCards() {
-    index.current === 0
+  function clearOldCards(index) {
+    index === 0
       ? setCardsOne([rCard(), rCard(), rCard(), rCard()])
       : setCardsTwo([blankCard, blankCard, blankCard, blankCard]);
   }
@@ -87,7 +87,7 @@ const Cards = () => {
         .set(cardStacks.current[newIndex].children[1], { rotate: -6, xPercent: 0, yPercent: 0, backgroundColor: rColor }, '<')
         .set(cardStacks.current[newIndex].children[2], { rotate: 6, xPercent: 0, yPercent: 0, backgroundColor: rColor }, '<')
         .set(cardStacks.current[newIndex].children[3], { rotate: 18, xPercent: 0, yPercent: 0, backgroundColor: rColor }, '<')
-        .to(cardStacks.current[oldIndex].children, { scale: 0, autoAlpha: 0, xPercent: 100 * direction, yPercent: 25, stagger: { each: 0.1, from: "random" }, onComplete: () => clearOldCards() }, '>')
+        .to(cardStacks.current[oldIndex].children, { scale: 0, autoAlpha: 0, xPercent: 100 * direction, yPercent: 25, stagger: { each: 0.1, from: "random" }, onComplete: () => clearOldCards(oldIndex) }, '>')
         .fromTo(cardStacks.current[newIndex].children, { scale: 0, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, stagger: { each: 0.1, from: "random" }, onComplete: () => { index.current = newIndex, animating.current = false } }, '<')
         .set(cardStacks.current[newIndex], { pointerEvents: 'all' }, '>')
         .set('.cardBtn', { opacity: 1, pointerEvents: 'all' }, '<')
@@ -117,16 +117,16 @@ const Cards = () => {
 
           <div id='cardStack' className='absolute grid h-full place-items-center'>
             <div className='-rotate-[18deg] opacity-0 card'>
-              <Image src={cardsTwo[0].href} alt={cardsOne[0].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[0].href} priority={true} />
+              <Image src={cardsTwo[0].href} alt={cardsTwo[0].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[0].href} priority={true} />
             </div>
             <div className='opacity-0 -rotate-6 card'>
-              <Image src={cardsTwo[1].href} alt={cardsOne[1].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[1].href} priority={true} />
+              <Image src={cardsTwo[1].href} alt={cardsTwo[1].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[1].href} priority={true} />
             </div>
             <div className='opacity-0 rotate-6 card'>
-              <Image src={cardsTwo[2].href} alt={cardsOne[2].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[2].href} priority={true} />
+              <Image src={cardsTwo[2].href} alt={cardsTwo[2].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[2].href} priority={true} />
             </div>
             <div className='rotate-[18deg] opacity-0 card'>
-              <Image src={cardsTwo[3].href} alt={cardsOne[3].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[3].href} priority={true} />
+              <Image src={cardsTwo[3].href} alt={cardsTwo[3].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[3].href} priority={true} />
             </div>
           </div>
 
