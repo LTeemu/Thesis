@@ -13,7 +13,7 @@ const Cards = () => {
   const tl = useRef()
 
   let initialCards = [rCard(), rCard(), rCard(), rCard()];
-  const blankCard = { href: "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=", alt: "blank" }
+  const blankCard = { href: "data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=", alt: "blank" }
   const [cardsOne, setCardsOne] = useState(initialCards)
   const [cardsTwo, setCardsTwo] = useState([blankCard, blankCard, blankCard, blankCard])
 
