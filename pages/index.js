@@ -72,6 +72,8 @@ const Index = () => {
 							layout='fill'
 							objectFit='cover'
 							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/lion.webp)]'}
+							placeholder='blur'
+							blurDataURL='/static/images/lion.webp'
 						/>
 					</div>
 
@@ -89,6 +91,8 @@ const Index = () => {
 							layout='fill'
 							objectFit='cover'
 							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/octopus.webp)]'}
+							placeholder='blur'
+							blurDataURL='/static/images/octopus.webp'
 						/>
 					</div>
 
@@ -106,6 +110,8 @@ const Index = () => {
 							layout='fill'
 							objectFit='cover'
 							className={'[mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] [mask-image:url(/static/images/fish.webp)]'}
+							placeholder='blur'
+							blurDataURL='/static/images/fish.webp'
 						/>
 					</div>
 
