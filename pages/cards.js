@@ -13,8 +13,9 @@ const Cards = () => {
   const tl = useRef()
 
   let initialCards = [rCard(), rCard(), rCard(), rCard()];
+  const blankCard = { href: "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=", alt: "blank" }
   const [cardsOne, setCardsOne] = useState(initialCards)
-  const [cardsTwo, setCardsTwo] = useState(initialCards)
+  const [cardsTwo, setCardsTwo] = useState([blankCard, blankCard, blankCard, blankCard])
 
   useEffect(() => {
     const cardHover = () => {
@@ -66,6 +67,12 @@ const Cards = () => {
       : setCardsOne([rCard(), rCard(), rCard(), rCard()]);
   }
 
+  function clearOldCards() {
+    index.current === 0
+      ? setCardsOne([rCard(), rCard(), rCard(), rCard()])
+      : setCardsTwo([blankCard, blankCard, blankCard, blankCard]);
+  }
+
   function gotoSection(direction) {
     if (!animating.current) {
       animating.current = true;
@@ -80,7 +87,7 @@ const Cards = () => {
         .set(cardStacks.current[newIndex].children[1], { rotate: -6, xPercent: 0, yPercent: 0, backgroundColor: rColor }, '<')
         .set(cardStacks.current[newIndex].children[2], { rotate: 6, xPercent: 0, yPercent: 0, backgroundColor: rColor }, '<')
         .set(cardStacks.current[newIndex].children[3], { rotate: 18, xPercent: 0, yPercent: 0, backgroundColor: rColor }, '<')
-        .to(cardStacks.current[oldIndex].children, { scale: 0, autoAlpha: 0, xPercent: 100 * direction, yPercent: 25, stagger: { each: 0.1, from: "random" } }, '>')
+        .to(cardStacks.current[oldIndex].children, { scale: 0, autoAlpha: 0, xPercent: 100 * direction, yPercent: 25, stagger: { each: 0.1, from: "random" }, onComplete: () => clearOldCards() }, '>')
         .fromTo(cardStacks.current[newIndex].children, { scale: 0, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, stagger: { each: 0.1, from: "random" }, onComplete: () => { index.current = newIndex, animating.current = false } }, '<')
         .set(cardStacks.current[newIndex], { pointerEvents: 'all' }, '>')
         .set('.cardBtn', { opacity: 1, pointerEvents: 'all' }, '<')
