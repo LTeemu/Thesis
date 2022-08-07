@@ -3,7 +3,7 @@ import { gsap, Linear, Back } from 'gsap'
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import Hamburger from './Hamburger'
 import Link from 'next/link'
-import { links } from '../public/static/data'
+import { links } from '../public/static/links'
 import { useRouter } from 'next/router'
 
 gsap.registerPlugin(ScrollToPlugin)

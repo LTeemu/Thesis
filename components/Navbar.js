@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import HamburgerNav from './HamburgerNav'
 import Darkbtn from './Darkbtn'
 import ToggleBorder from './ToggleBorder'
 import Link from 'next/dist/client/link'
-import { links } from '../public/static/data'
+import { links } from '../public/static/links'
 import { useRouter } from 'next/router'
 
 const Navbar = () => {

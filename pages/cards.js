@@ -35,6 +35,12 @@ const Cards = () => {
       stack.addEventListener("mouseleave", cardReset);
     })
 
+    //Set random bgs to first cardStack on load
+    gsap.set(cardStacks.current[0].children[0], { backgroundColor: rColor })
+    gsap.set(cardStacks.current[0].children[1], { backgroundColor: rColor }, '<')
+    gsap.set(cardStacks.current[0].children[2], { backgroundColor: rColor }, '<')
+    gsap.set(cardStacks.current[0].children[3], { backgroundColor: rColor }, '<')
+
     return () => {
       cardStacks.current.forEach((stack) => {
         stack.removeEventListener("mouseenter", cardHover);
@@ -43,21 +49,25 @@ const Cards = () => {
     }
   }, [])
 
+  function rColor() {
+    return `rgba(${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)}, 0.5)`;
+  };
+
   function gotoSection(direction) {
     if (!animating.current) {
       animating.current = true;
       let oldIndex = index.current;
-      let newIndex = wrap.current(index.current + direction);
+      let newIndex = wrap.current(index.current + 1);
 
       tl.current
         .set('.cardBtn', { opacity: 0.6, pointerEvents: 'none' })
         .set(cardStacks.current[newIndex], { pointerEvents: 'none' }, '<')
-        .set(cardStacks.current[newIndex].children[0], { rotate: -18, xPercent: 0, yPercent: 0 }, '<')
-        .set(cardStacks.current[newIndex].children[1], { rotate: -6, xPercent: 0, yPercent: 0 }, '<')
-        .set(cardStacks.current[newIndex].children[2], { rotate: 6, xPercent: 0, yPercent: 0 }, '<')
-        .set(cardStacks.current[newIndex].children[3], { rotate: 18, xPercent: 0, yPercent: 0 }, '<')
-        .to(cardStacks.current[oldIndex].children, { scale: 0, autoAlpha: 0, x: 100 * direction, stagger: { each: 0.1, from: "random" } }, '>')
-        .fromTo(cardStacks.current[newIndex].children, { x: -100 * direction, scale: 0, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, x: 0, stagger: { each: 0.1, from: "random" }, onComplete: () => { index.current = newIndex, animating.current = false } }, '<')
+        .set(cardStacks.current[newIndex].children[0], { rotate: -18, xPercent: 0, yPercent: 0, backgroundColor: rColor }, '<')
+        .set(cardStacks.current[newIndex].children[1], { rotate: -6, xPercent: 0, yPercent: 0, backgroundColor: rColor }, '<')
+        .set(cardStacks.current[newIndex].children[2], { rotate: 6, xPercent: 0, yPercent: 0, backgroundColor: rColor }, '<')
+        .set(cardStacks.current[newIndex].children[3], { rotate: 18, xPercent: 0, yPercent: 0, backgroundColor: rColor }, '<')
+        .to(cardStacks.current[oldIndex].children, { scale: 0, autoAlpha: 0, xPercent: 100 * direction, yPercent: 25, stagger: { each: 0.1, from: "random" } }, '>')
+        .fromTo(cardStacks.current[newIndex].children, { scale: 0, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, stagger: { each: 0.1, from: "random" }, onComplete: () => { index.current = newIndex, animating.current = false } }, '<')
         .set(cardStacks.current[newIndex], { pointerEvents: 'all' }, '>')
         .set('.cardBtn', { opacity: 1, pointerEvents: 'all' }, '<')
     }
@@ -70,46 +80,46 @@ const Cards = () => {
 
         <div className='relative grid place-items-center h-[calc(100vh_-_66px_-_65px)] min-h-[400px]'>
           <div id='cardStack' className='absolute grid h-full scale-0 place-items-center'>
-            <div className='bg-[rgba(228,101,101,0.5)] -rotate-[18deg] card'>
+            <div className='-rotate-[18deg] card'>
               <Image src='https://cdn.pixabay.com/photo/2017/02/15/12/12/cat-2068462_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2017/02/15/12/12/cat-2068462_960_720.jpg' priority={true} />
             </div>
-            <div className='bg-[rgba(238,255,86,0.5)] -rotate-6 card'>
+            <div className='-rotate-6 card'>
               <Image src='https://cdn.pixabay.com/photo/2015/06/19/14/20/cat-814952_960_720.jpg' alt='Cat 2' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2015/06/19/14/20/cat-814952_960_720.jpg' priority={true} />
             </div>
-            <div className='bg-[rgba(172,255,94,0.5)] rotate-6 card'>
+            <div className='rotate-6 card'>
               <Image src='https://cdn.pixabay.com/photo/2015/09/09/19/41/cat-932846_960_720.jpg' alt='Cat 3' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2015/09/09/19/41/cat-932846_960_720.jpg' priority={true} />
             </div>
-            <div className='bg-[rgba(99,250,255,0.5)] rotate-[18deg] card'>
+            <div className='rotate-[18deg] card'>
               <Image src='https://cdn.pixabay.com/photo/2020/06/22/08/27/cat-5328304_960_720.jpg' alt='Cat 4' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2020/06/22/08/27/cat-5328304_960_720.jpg' priority={true} />
             </div>
           </div>
 
           <div id='cardStack' className='absolute grid h-full place-items-center'>
-            <div className='bg-[rgba(101,228,169,0.5)] -rotate-[18deg] opacity-0 card'>
+            <div className='-rotate-[18deg] opacity-0 card'>
               <Image src='https://cdn.pixabay.com/photo/2017/09/12/01/25/spider-2740997_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2017/09/12/01/25/spider-2740997_960_720.jpg' />
             </div>
-            <div className='bg-[rgba(210,87,235,0.5)] -rotate-6 opacity-0 card'>
+            <div className='opacity-0 -rotate-6 card'>
               <Image src='https://cdn.pixabay.com/photo/2014/12/11/19/26/spider-564635_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2014/12/11/19/26/spider-564635_960_720.jpg' />
             </div>
-            <div className='bg-[rgba(255,94,94,0.5)] rotate-6 opacity-0 card'>
+            <div className='opacity-0 rotate-6 card'>
               <Image src='https://cdn.pixabay.com/photo/2013/05/14/16/28/spider-111075_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2013/05/14/16/28/spider-111075_960_720.jpg' />
             </div>
-            <div className='bg-[rgba(255,193,99,0.5)] rotate-[18deg] opacity-0 card'>
+            <div className='rotate-[18deg] opacity-0 card'>
               <Image src='https://cdn.pixabay.com/photo/2016/11/19/15/20/dog-1839808_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2016/11/19/15/20/dog-1839808_960_720.jpg' />
             </div>
           </div>
 
           <div id='cardStack' className='absolute grid h-full place-items-center'>
-            <div className='bg-[rgba(245,248,90,0.5)] -rotate-[18deg] opacity-0 card'>
+            <div className='-rotate-[18deg] opacity-0 card'>
               <Image src='https://cdn.pixabay.com/photo/2014/12/11/19/19/ant-564617_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" objectPosition="75% center" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2014/12/11/19/19/ant-564617_960_720.jpg' />
             </div>
-            <div className='bg-[rgba(210,87,235,0.5)] -rotate-6 opacity-0 card'>
+            <div className='opacity-0 -rotate-6 card'>
               <Image src='https://cdn.pixabay.com/photo/2019/08/20/05/48/fly-4417790_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" objectPosition="75% center" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2019/08/20/05/48/fly-4417790_960_720.jpg' />
             </div>
-            <div className='bg-[rgba(252,223,97,0.5)] rotate-6 opacity-0 card'>
+            <div className='opacity-0 rotate-6 card'>
               <Image src='https://cdn.pixabay.com/photo/2017/06/04/18/20/tick-2371782_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2017/06/04/18/20/tick-2371782_960_720.jpg' />
             </div>
-            <div className='bg-[rgba(222,93,248,0.5)] rotate-[18deg] opacity-0 card'>
+            <div className='rotate-[18deg] opacity-0 card'>
               <Image src='https://cdn.pixabay.com/photo/2016/08/11/23/17/dragonfly-1587252_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2016/08/11/23/17/dragonfly-1587252_960_720.jpg' />
             </div>
           </div>
