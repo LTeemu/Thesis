@@ -64,7 +64,6 @@ const Cards = () => {
     index.current === 0
       ? setCardsTwo([rCard(), rCard(), rCard(), rCard()])
       : setCardsOne([rCard(), rCard(), rCard(), rCard()]);
-    console.log(index.current)
   }
 
   function gotoSection(direction) {
@@ -92,7 +91,6 @@ const Cards = () => {
     <>
       <Head><title>{'TL - Cards'}</title></Head>
       <div className='w-screen min-h-[calc(100vh_-_66px_-_65px)] text-slate-100'>
-
         <div className='relative grid place-items-center h-[calc(100vh_-_66px_-_65px)] min-h-[400px]'>
           <div id='cardStack' className='absolute grid h-full scale-0 place-items-center'>
             <div className='-rotate-[18deg] card'>
