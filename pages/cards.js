@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap, Expo } from 'gsap'
 import { MdOutlineThumbDownOffAlt, MdOutlineThumbUpOffAlt } from 'react-icons/md'
+import { cards } from '../public/static/cards'
 
 const Cards = () => {
   const animating = useRef(false)
@@ -10,6 +11,10 @@ const Cards = () => {
   const cardStacks = useRef()
   const wrap = useRef()
   const tl = useRef()
+
+  let initialCards = [rCard(), rCard(), rCard(), rCard()];
+  const [cardsOne, setCardsOne] = useState(initialCards)
+  const [cardsTwo, setCardsTwo] = useState(initialCards)
 
   useEffect(() => {
     const cardHover = () => {
@@ -51,7 +56,16 @@ const Cards = () => {
 
   function rColor() {
     return `rgba(${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)}, 0.5)`;
-  };
+  }
+
+  function rCard() { return gsap.utils.random(cards) }
+
+  function newCards() {
+    index.current === 0
+      ? setCardsTwo([rCard(), rCard(), rCard(), rCard()])
+      : setCardsOne([rCard(), rCard(), rCard(), rCard()]);
+    console.log(index.current)
+  }
 
   function gotoSection(direction) {
     if (!animating.current) {
@@ -61,6 +75,7 @@ const Cards = () => {
 
       tl.current
         .set('.cardBtn', { opacity: 0.6, pointerEvents: 'none' })
+        .add(newCards, '<')
         .set(cardStacks.current[newIndex], { pointerEvents: 'none' }, '<')
         .set(cardStacks.current[newIndex].children[0], { rotate: -18, xPercent: 0, yPercent: 0, backgroundColor: rColor }, '<')
         .set(cardStacks.current[newIndex].children[1], { rotate: -6, xPercent: 0, yPercent: 0, backgroundColor: rColor }, '<')
@@ -81,46 +96,32 @@ const Cards = () => {
         <div className='relative grid place-items-center h-[calc(100vh_-_66px_-_65px)] min-h-[400px]'>
           <div id='cardStack' className='absolute grid h-full scale-0 place-items-center'>
             <div className='-rotate-[18deg] card'>
-              <Image src='https://cdn.pixabay.com/photo/2017/02/15/12/12/cat-2068462_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2017/02/15/12/12/cat-2068462_960_720.jpg' priority={true} />
+              <Image src={cardsOne[0].href} alt={cardsOne[0].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsOne[0].href} priority={true} />
             </div>
             <div className='-rotate-6 card'>
-              <Image src='https://cdn.pixabay.com/photo/2015/06/19/14/20/cat-814952_960_720.jpg' alt='Cat 2' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2015/06/19/14/20/cat-814952_960_720.jpg' priority={true} />
+              <Image src={cardsOne[1].href} alt={cardsOne[1].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsOne[1].href} priority={true} />
             </div>
             <div className='rotate-6 card'>
-              <Image src='https://cdn.pixabay.com/photo/2015/09/09/19/41/cat-932846_960_720.jpg' alt='Cat 3' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2015/09/09/19/41/cat-932846_960_720.jpg' priority={true} />
+              <Image src={cardsOne[2].href} alt={cardsOne[2].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsOne[2].href} priority={true} />
             </div>
             <div className='rotate-[18deg] card'>
-              <Image src='https://cdn.pixabay.com/photo/2020/06/22/08/27/cat-5328304_960_720.jpg' alt='Cat 4' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2020/06/22/08/27/cat-5328304_960_720.jpg' priority={true} />
+              <Image src={cardsOne[3].href} alt={cardsOne[3].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsOne[3].href} priority={true} />
             </div>
           </div>
 
-          <div id='cardStack' className='absolute grid h-full place-items-center'>
-            <div className='-rotate-[18deg] opacity-0 card'>
-              <Image src='https://cdn.pixabay.com/photo/2017/09/12/01/25/spider-2740997_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2017/09/12/01/25/spider-2740997_960_720.jpg' />
-            </div>
-            <div className='opacity-0 -rotate-6 card'>
-              <Image src='https://cdn.pixabay.com/photo/2014/12/11/19/26/spider-564635_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2014/12/11/19/26/spider-564635_960_720.jpg' />
-            </div>
-            <div className='opacity-0 rotate-6 card'>
-              <Image src='https://cdn.pixabay.com/photo/2013/05/14/16/28/spider-111075_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2013/05/14/16/28/spider-111075_960_720.jpg' />
-            </div>
-            <div className='rotate-[18deg] opacity-0 card'>
-              <Image src='https://cdn.pixabay.com/photo/2016/11/19/15/20/dog-1839808_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2016/11/19/15/20/dog-1839808_960_720.jpg' />
-            </div>
-          </div>
 
           <div id='cardStack' className='absolute grid h-full place-items-center'>
             <div className='-rotate-[18deg] opacity-0 card'>
-              <Image src='https://cdn.pixabay.com/photo/2014/12/11/19/19/ant-564617_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" objectPosition="75% center" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2014/12/11/19/19/ant-564617_960_720.jpg' />
+              <Image src={cardsTwo[0].href} alt={cardsOne[0].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[0].href} priority={true} />
             </div>
             <div className='opacity-0 -rotate-6 card'>
-              <Image src='https://cdn.pixabay.com/photo/2019/08/20/05/48/fly-4417790_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" objectPosition="75% center" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2019/08/20/05/48/fly-4417790_960_720.jpg' />
+              <Image src={cardsTwo[1].href} alt={cardsOne[1].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[1].href} priority={true} />
             </div>
             <div className='opacity-0 rotate-6 card'>
-              <Image src='https://cdn.pixabay.com/photo/2017/06/04/18/20/tick-2371782_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2017/06/04/18/20/tick-2371782_960_720.jpg' />
+              <Image src={cardsTwo[2].href} alt={cardsOne[2].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[2].href} priority={true} />
             </div>
             <div className='rotate-[18deg] opacity-0 card'>
-              <Image src='https://cdn.pixabay.com/photo/2016/08/11/23/17/dragonfly-1587252_960_720.jpg' alt='Cat 1' layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL='https://cdn.pixabay.com/photo/2016/08/11/23/17/dragonfly-1587252_960_720.jpg' />
+              <Image src={cardsTwo[3].href} alt={cardsOne[3].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[3].href} priority={true} />
             </div>
           </div>
 
@@ -134,10 +135,7 @@ const Cards = () => {
             </button>
           </div>
         </div>
-
-
       </div>
-
     </>
   );
 }

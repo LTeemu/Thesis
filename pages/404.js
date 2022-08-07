@@ -9,11 +9,15 @@ const Custom404 = () => {
       <h2>This page doesn&apos;t exist</h2>
       <div className='relative w-full h-full max-w-2xl'>
         <Image
+          priority={true}
           src={'/static/images/oops.webp'}
           alt='404 Note'
           layout='fill'
           objectFit='contain'
-          priority={true}
+          objectPosition='center'
+          placeholder='blur'
+          blurDataURL='/static/images/oops.webp'
+          className='bg-no-repeat'
         />
       </div>
     </div>

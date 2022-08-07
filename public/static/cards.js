@@ -1,0 +1,15 @@
+export const cards = [
+  { href: "/static/images/castle.webp", alt: "Castle" },
+  { href: "/static/images/cherry_blossoms.webp", alt: "Cherry Blossoms" },
+  { href: "/static/images/fish.webp", alt: "Fish" },
+  { href: "/static/images/floral.webp", alt: "Floral" },
+  { href: "/static/images/gold.webp", alt: "Gold" },
+  { href: "/static/images/jellyfish.webp", alt: "Jellyfish" },
+  { href: "/static/images/lion.webp", alt: "Lion" },
+  { href: "/static/images/octopus.webp", alt: "Octopus" },
+  { href: "/static/images/oops.webp", alt: "Oops" },
+  { href: "/static/images/sea.webp", alt: "Sea" },
+  { href: "/static/images/stoneblue.webp", alt: "Stoneblue" },
+  { href: "/static/images/stonebrown.webp", alt: "Stonebrown" },
+  { href: "/static/images/stonegreen.webp", alt: "Stonegreen" },
+]
