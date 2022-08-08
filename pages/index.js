@@ -14,13 +14,13 @@ const Index = () => {
 	useEffect(() => {
 		gsap.utils.toArray('.fadein').forEach((element) => {
 			gsap.fromTo(element,
-				{ y: 0, opacity: 0.4 },
+				{ y: 0, opacity: 0.25 },
 				{
 					y: 0, ease: 'linear', opacity: 1, duration: 0.5,
 					scrollTrigger: {
 						trigger: element,
-						start: 'top 90%',
-						end: 'bottom 10%',
+						start: 'top 87.5%',
+						end: 'bottom 12.5%',
 						toggleActions: 'play reverse play reverse'
 					},
 				}
@@ -54,12 +54,7 @@ const Index = () => {
 				</div>
 			</div>
 
-			<svg
-				preserveAspectRatio='none'
-				viewBox='0 0 1200 120'
-				xmlns='http://www.w3.org/2000/svg'
-				className='fill-lightsecondary dark:fill-darksecondary h-[2.5vw] w-full rotate-180'
-			>
+			<svg preserveAspectRatio='none' viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg' className='fill-lightsecondary dark:fill-darksecondary h-[2.5vw] w-full rotate-180'>
 				<path d='M60 120L0 0h120L60 120zm120 0L120 0h120l-60 120zm120 0L240 0h120l-60 120zm120 0L360 0h120l-60 120zm120 0L480 0h120l-60 120zm120 0L600 0h120l-60 120zm120 0L720 0h120l-60 120zm120 0L840 0h120l-60 120zm120 0L960 0h120l-60 120zm120 0L1080 0h120l-60 120z' />
 			</svg>
 
@@ -79,13 +74,12 @@ const Index = () => {
 
 					<div className='row-span-1 fadein'>
 						<h2 className='dark:animate-textColor'>Lion, Sassbook AI Story Writer</h2>
-						<p>
-							Lion was a little chap. He looked like a cat, with a round nose and a short tail. His eyes were always on me as I entered the room, his ears were pricked forward, he was as silent as a mouse, like the cat. Now and then he would turn his eyes in my direction and look as meek as the little mouse. &quot; I thought you said you were going straight to the wedding&quot;, said Ralph, in a low voice. Lion took a step toward him, almost afraid to touch him. Not at a word did the other tell his host that Lion was going straight to the wedding. &quot;Well&quot;, I said to Ralph. And then Lion ran to him and kissed him for the first time in his life.
-						</p>
+						<p>Lion was a little chap. He looked like a cat, with a round nose and a short tail. His eyes were always on me as I entered the room, his ears were pricked forward, he was as silent as a mouse, like the cat. Now and then he would turn his eyes in my direction and look as meek as the little mouse. &quot; I thought you said you were going straight to the wedding&quot;, said Ralph, in a low voice. Lion took a step toward him, almost afraid to touch him. Not at a word did the other tell his host that Lion was going straight to the wedding. &quot;Well&quot;, I said to Ralph. And then Lion ran to him and kissed him for the first time in his life.</p>
 					</div>
 
 					<div className='relative row-span-2 md:row-span-3 min-h-[350px] fadein'>
 						<Image
+							priority={true}
 							src={theme == 'dark' ? '/static/images/floral.webp' : '/static/images/stonegreen.webp'}
 							alt='Octopus'
 							layout='fill'
@@ -98,13 +92,12 @@ const Index = () => {
 
 					<div className='row-span-1 fadein'>
 						<h2 className='dark:animate-textColor'>Octopus in a briefcase</h2>
-						<p>
-							Octopus in a briefcase, a creature so small that it had been shrunk to almost the size of a human, had the entire back half of its body encased in the case. Its eyes were black and slits, its arms were thin and powerful. At the first minute of my death, I&apos;d be returned to its home. With a small, soft, human hand, the octopus would make sure I got back to my home, to a home I had never been to, a place I never wanted.
-						</p>
+						<p>Octopus in a briefcase, a creature so small that it had been shrunk to almost the size of a human, had the entire back half of its body encased in the case. Its eyes were black and slits, its arms were thin and powerful. At the first minute of my death, I&apos;d be returned to its home. With a small, soft, human hand, the octopus would make sure I got back to my home, to a home I had never been to, a place I never wanted.</p>
 					</div>
 
 					<div className='relative row-span-2 min-h-[350px] fadein'>
 						<Image
+							priority={true}
 							src={theme == 'dark' ? '/static/images/sea.webp' : '/static/images/stoneblue.webp'}
 							alt='Fish'
 							layout='fill'
@@ -117,18 +110,11 @@ const Index = () => {
 
 					<div className='row-span-1 fadein'>
 						<h2 className='dark:animate-textColor'>Fish sticks</h2>
-						<p>
-							Fish sticks are not to my taste, he declared. They are too good for the sea. He was right. The fish sticks were too perfect for sea food. And there I left him, feeling that I was on a certain level with the great ocean, and that my life was complete.
-						</p>
+						<p>Fish sticks are not to my taste, he declared. They are too good for the sea. He was right. The fish sticks were too perfect for sea food. And there I left him, feeling that I was on a certain level with the great ocean, and that my life was complete.</p>
 					</div>
 				</div>
 			</div>
-			<svg
-				preserveAspectRatio='none'
-				viewBox='0 0 1200 120'
-				xmlns='http://www.w3.org/2000/svg'
-				className='fill-lightsecondary dark:fill-darksecondary h-[2.5vw] w-full mb-5'
-			>
+			<svg preserveAspectRatio='none' viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg' className='fill-lightsecondary dark:fill-darksecondary h-[2.5vw] w-full mb-5'>
 				<path d='M60 120L0 0h120L60 120zm120 0L120 0h120l-60 120zm120 0L240 0h120l-60 120zm120 0L360 0h120l-60 120zm120 0L480 0h120l-60 120zm120 0L600 0h120l-60 120zm120 0L720 0h120l-60 120zm120 0L840 0h120l-60 120zm120 0L960 0h120l-60 120zm120 0L1080 0h120l-60 120z' />
 			</svg>
 			<Companies />

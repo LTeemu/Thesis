@@ -56,7 +56,7 @@ const Cards = () => {
   }, [])
 
   function rColor() {
-    return `rgba(${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)}, ${gsap.utils.random(0, 255)}, 0.5)`;
+    return `rgba(${gsap.utils.random(50, 200)}, ${gsap.utils.random(50, 200)}, ${gsap.utils.random(50, 200)}, 0.6)`;
   }
 
   function rCard() { return gsap.utils.random(cards) }
