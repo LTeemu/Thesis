@@ -79,7 +79,6 @@ const Index = () => {
 
 					<div className='relative row-span-2 md:row-span-3 min-h-[350px] fadein'>
 						<Image
-							priority={true}
 							src={theme == 'dark' ? '/static/images/floral.webp' : '/static/images/stonegreen.webp'}
 							alt='Octopus'
 							layout='fill'
@@ -97,7 +96,6 @@ const Index = () => {
 
 					<div className='relative row-span-2 min-h-[350px] fadein'>
 						<Image
-							priority={true}
 							src={theme == 'dark' ? '/static/images/sea.webp' : '/static/images/stoneblue.webp'}
 							alt='Fish'
 							layout='fill'
