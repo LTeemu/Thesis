@@ -131,11 +131,11 @@ const Cards = () => {
           </div>
 
           <div className='flex absolute bottom-2 place-content-center gap-[15%]' >
-            <button className='p-3 text-red-700 duration-300 rounded-full backdrop-invert-[10%] border-[3px] border-red-700 cardBtn' onClick={() => gotoSection(-1)}>
+            <button aria-label='Dislike' className='p-3 text-red-700 duration-300 rounded-full backdrop-invert-[10%] border-[3px] border-red-700 cardBtn' onClick={() => gotoSection(-1)}>
               <MdOutlineThumbDownOffAlt size={40} />
             </button>
 
-            <button className='p-3 text-green-600 duration-300 rounded-full backdrop-invert-[10%] cardBtn border-[3px] border-green-600' onClick={() => gotoSection(+1)}>
+            <button aria-label='Like' className='p-3 text-green-600 duration-300 rounded-full backdrop-invert-[10%] cardBtn border-[3px] border-green-600' onClick={() => gotoSection(+1)}>
               <MdOutlineThumbUpOffAlt size={40} />
             </button>
           </div>
