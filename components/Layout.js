@@ -1,13 +1,14 @@
 import Navbar from './Navbar'
 import Footer from './Footer'
 import ScrollTop from './ScrollTop.js'
+import Transition from './Transition'
 
 const Layout = ({ children }) => {
 
 	return (
 		<div>
 			<Navbar />
-			<div id='transition' className='fixed z-50 w-screen h-screen opacity-0 pointer-events-none bg-lightprimary dark:bg-darkprimary'></div>
+			<Transition />
 			{children}
 			<ScrollTop />
 			<Footer />

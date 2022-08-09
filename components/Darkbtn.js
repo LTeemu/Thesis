@@ -1,5 +1,5 @@
 import { useTheme } from 'next-themes'
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 
 const Darkbtn = () => {
