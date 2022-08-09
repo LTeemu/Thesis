@@ -1,20 +1,25 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import HamburgerNav from './HamburgerNav'
 import Darkbtn from './Darkbtn'
 import ToggleBorder from './ToggleBorder'
 import Link from 'next/dist/client/link'
 import { links } from '../public/static/links'
 import { useRouter } from 'next/router'
+import { gsap, Power4 } from 'gsap'
 
 const Navbar = () => {
 	const [navOpen, setNavOpen] = useState(false)
 	const [bordersVisible, setBordersVisible] = useState(false)
 	const router = useRouter()
+	const transitionTL = useRef()
+	transitionTL.current = gsap.timeline();
 
 	const handleLink = (e, href) => {
 		e.preventDefault();
 		if (href !== router.asPath) {
-			router.push(href)
+			transitionTL.current
+				.to('#transition', { opacity: 1, duration: 0.3, ease: Power4.easeIn, onComplete: () => router.push(href) })
+				.to('#transition', { opacity: 0, duration: 0.3, ease: Power4.easeIn }, '>')
 			navOpen && setNavOpen(false)
 			bordersVisible && setBordersVisible(false)
 		}
