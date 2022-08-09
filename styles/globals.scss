@@ -13,6 +13,10 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+*:focus-visible {
+  outline-offset: 5px;
+}
+
 body {
   font-family: 'Jura', sans-serif;
   overflow-x: hidden;
@@ -100,21 +104,6 @@ svg {
     15px 0 0 0 #d4a149,
     -15px 0 0 0 #d4a149;
   transform: rotate(-45deg);
-}
-
-/* Focusing the button with a keyboard */
-*:focus-visible {
-  outline: 4px dashed #cc26a2;
-}
-
-/* Focusing the button with a mouse, touch, or stylus */
-*:focus:not(:focus-visible) {
-  outline: none;
-}
-
-/* Disabled on Firefox because shows on mouse click */
-*:-moz-focusring {
-  outline: none;
 }
 
 @keyframes colorAnim {

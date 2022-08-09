@@ -30,8 +30,7 @@ const Darkbtn = () => {
 	}, [theme])
 
 	return (
-		<button type='button' id='darkbtn_container' aria-label='Change theme' className={`cursor-pointer flex flex-col relative h-[40px] w-[40px] m-auto items-center justify-center ${loadComplete ? 'visible' : 'invisible'}`}
-			onClick={() => theme === 'dark' ? setTheme('light') : setTheme('dark')}>
+		<button type='button' onClick={() => theme === 'dark' ? setTheme('light') : setTheme('dark')} id='darkbtn_container' aria-label='Change theme' className={`cursor-pointer relative flex flex-col h-[40px] w-[40px] m-auto items-center justify-center ${loadComplete ? 'visible' : 'invisible'}`}>
 			<span className={'w-[40%] h-[40%] bg-[#e3b566] rounded-[50%] shadow-[inset_-1px_-1px_2px_1px_rgba(0,0,0,0.4)]'} id='sun'></span>
 			<span className='h-[9%] w-[15%] absolute opacity-1' id='sun-shadow1'></span>
 			<span className='h-[9%] w-[15%] absolute opacity-1' id='sun-shadow2'></span>
