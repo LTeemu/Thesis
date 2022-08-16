@@ -19,13 +19,16 @@ const Navbar = () => {
 		e.preventDefault();
 		if (href !== router.asPath && !animating) {
 			setAnimating(true)
-			transitionTL.current
-				.to('.transitionBar', { left: 0, right: 'unset', width: '100%', duration: 0.4, ease: Sine.easeIn, stagger: { each: 0.05, from: 'top' }, onComplete: () => router.push(href) }, '>')
-				.to('.transitionBar', { left: 'unset', right: 0, width: 0, duration: 0.4, ease: Sine.easeOut, stagger: { each: 0.05, from: 'bottom' }, onComplete: () => setAnimating(false) }, '>+0.2')
+			router.prefetch(href)
+			transitionTL.current.to('.transitionBar', { left: 0, right: 'unset', width: '100%', duration: 0.4, ease: Sine.easeIn, stagger: { each: 0.05, from: 'top' }, onComplete: () => router.push(href) })
 			navOpen && setNavOpen(false)
 			bordersVisible && setBordersVisible(false)
 		}
 	}
+
+	useEffect(() => {
+		(router.isReady && animating) && transitionTL.current.to('.transitionBar', { left: 'unset', right: 0, width: 0, duration: 0.4, ease: Sine.easeOut, stagger: { each: 0.05, from: 'bottom' }, onComplete: () => setAnimating(false) })
+	}, [router])
 
 	return (
 		<div className='flex justify-between h-[50px] my-2 items-center px-6'>
