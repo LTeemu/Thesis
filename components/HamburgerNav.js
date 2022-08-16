@@ -27,7 +27,7 @@ const HamburgerNav = ({ navOpen, setNavOpen, handleLink }) => {
   return (
     <>
       <Hamburger navOpen={navOpen} setNavOpen={setNavOpen} />
-      <div id="navContainer" className='z-50 absolute top-[66px] right-6 md:hidden dark:bg-darksecondary bg-slate-200 shadow-[inset_0_0_6px_0px_rgba(0,0,0,0.5)] rounded-2xl hidden'>
+      <div id="navContainer" className='z-[52] absolute top-[66px] right-6 md:hidden dark:bg-darksecondary bg-slate-200 shadow-[inset_0_0_6px_0px_rgba(0,0,0,0.5)] rounded-2xl hidden'>
         <div id='linkContainer' className="flex flex-col p-4 md:hidden my-children">
           {links.map((link, index) =>
             <Link href={link.href} key={index}>
