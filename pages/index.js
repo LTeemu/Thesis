@@ -37,8 +37,9 @@ const Index = () => {
 		<div className='flex flex-col'>
 			<Head>
 				<title>{'TL - Home'}</title>
-				<meta property="og:title" content="TL - Single Page Application with cool animations" key="ogtitle" />
-				<meta property="og:description" content="Single Page Application (SPA) made with NextJS, TailwindCSS and GSAP! Made for practice." key="ogdesc" />
+				<meta property="title" content="TL - Single Page Application with cool animations" />
+				<meta property="description" content="Single Page Application (SPA) made with NextJS, TailwindCSS and GSAP! Made for practice." />
+				<meta name="author" content="Teemu Leinonen" />
 			</Head>
 			<div className='relative grid grid-cols-1 px-6 sm:grid-cols-2 w-full max-w-[1400px] sm:mx-auto'>
 				<div className='flex flex-col justify-center'>
