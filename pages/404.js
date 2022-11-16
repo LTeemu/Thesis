@@ -3,11 +3,10 @@ import Head from 'next/head'
 
 const Custom404 = () => {
   return (
-    //Minus header and footer
-    <div className='flex flex-col items-center h-[calc(100vh_-_66px_-_65px)]'>
+    <div className='flex flex-col items-center flex-1'>
       <Head><title>{'TL - 404'}</title></Head>
-      <h2>This page doesn&apos;t exist</h2>
-      <div className='relative w-full h-full max-w-2xl'>
+      <p className='z-10 mt-2 text-2xl'>This page doesn&apos;t exist</p>
+      <div className='relative h-[80vw] w-[80vw] max-h-[700px] m-auto'>
         <Image
           priority={true}
           src={'/static/images/oops.webp'}
@@ -17,7 +16,7 @@ const Custom404 = () => {
           objectPosition='center'
           placeholder='blur'
           blurDataURL='/static/images/oops.webp'
-          className='bg-no-repeat'
+          className='bg-no-repeat aspect-square'
         />
       </div>
     </div>

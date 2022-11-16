@@ -31,7 +31,7 @@ const Navbar = () => {
 	}, [router])
 
 	return (
-		<div className='flex justify-between h-[50px] my-2 items-center px-6'>
+		<div className='flex items-center justify-between px-6 py-3'>
 			<Link href="/">
 				<a onClick={e => handleLink(e, '/')} className={`text-4xl font-bold ${(router.asPath === '/' || animating) && 'pointer-events-none'}`}>Logo</a>
 			</Link>

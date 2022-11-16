@@ -8,6 +8,11 @@
   }
 }
 
+:root {
+font-size: 1rem;
+font-size: clamp(1rem, 0.9642857142857143rem + 0.17857142857142858vw, 1.25rem);
+}
+
 html {
   text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;

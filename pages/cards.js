@@ -18,11 +18,12 @@ const Cards = () => {
   const [cardsTwo, setCardsTwo] = useState([blankCard, blankCard, blankCard, blankCard])
 
   useEffect(() => {
+    //50% no gap
     const cardHover = () => {
-      gsap.to(cardStacks.current[index.current].children[0], { rotate: 0, xPercent: -50, yPercent: -50 });
-      gsap.to(cardStacks.current[index.current].children[1], { rotate: 0, xPercent: 50, yPercent: -50 });
-      gsap.to(cardStacks.current[index.current].children[2], { rotate: 0, xPercent: -50, yPercent: 50 });
-      gsap.to(cardStacks.current[index.current].children[3], { rotate: 0, xPercent: 50, yPercent: 50 });
+      gsap.to(cardStacks.current[index.current].children[0], { rotate: 0, xPercent: -53, yPercent: -51.5 });
+      gsap.to(cardStacks.current[index.current].children[1], { rotate: 0, xPercent: 53, yPercent: -51.5 });
+      gsap.to(cardStacks.current[index.current].children[2], { rotate: 0, xPercent: -53, yPercent: 51.5 });
+      gsap.to(cardStacks.current[index.current].children[3], { rotate: 0, xPercent: 53, yPercent: 51.5 });
     }
 
     const cardReset = () => {
@@ -56,7 +57,7 @@ const Cards = () => {
   }, [])
 
   function rColor() {
-    return `rgba(${gsap.utils.random(50, 200)}, ${gsap.utils.random(50, 200)}, ${gsap.utils.random(50, 200)}, 0.6)`;
+    return `rgba(${gsap.utils.random(50, 200)}, ${gsap.utils.random(50, 200)}, ${gsap.utils.random(50, 200)}, 0.7)`;
   }
 
   function rCard() { return gsap.utils.random(cards) }
@@ -97,50 +98,47 @@ const Cards = () => {
   return (
     <>
       <Head><title>{'TL - Cards'}</title></Head>
-      <div className='w-screen min-h-[calc(100vh_-_66px_-_65px)] text-slate-100'>
-        <div className='relative grid place-items-center h-[calc(100vh_-_66px_-_65px)] min-h-[400px]'>
-          <div id='cardStack' className='absolute grid h-full scale-0 place-items-center'>
-            <div className='-rotate-[18deg] card'>
-              <Image src={cardsOne[0].href} alt={cardsOne[0].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsOne[0].href} priority={true} />
-            </div>
-            <div className='-rotate-6 card'>
-              <Image src={cardsOne[1].href} alt={cardsOne[1].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsOne[1].href} priority={true} />
-            </div>
-            <div className='rotate-6 card'>
-              <Image src={cardsOne[2].href} alt={cardsOne[2].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsOne[2].href} priority={true} />
-            </div>
-            <div className='rotate-[18deg] card'>
-              <Image src={cardsOne[3].href} alt={cardsOne[3].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsOne[3].href} priority={true} />
-            </div>
+      <div className='flex flex-col items-center justify-center flex-1 min-h-[350px]'>
+        <div id='cardStack' className='absolute grid self-center h-full scale-0 place-items-center'>
+          <div className='-rotate-[18deg] card'>
+            <Image src={cardsOne[0].href} alt={cardsOne[0].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsOne[0].href} priority={true} />
           </div>
-
-
-          <div id='cardStack' className='absolute grid h-full place-items-center'>
-            <div className='-rotate-[18deg] opacity-0 card'>
-              <Image src={cardsTwo[0].href} alt={cardsTwo[0].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[0].href} priority={true} />
-            </div>
-            <div className='opacity-0 -rotate-6 card'>
-              <Image src={cardsTwo[1].href} alt={cardsTwo[1].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[1].href} priority={true} />
-            </div>
-            <div className='opacity-0 rotate-6 card'>
-              <Image src={cardsTwo[2].href} alt={cardsTwo[2].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[2].href} priority={true} />
-            </div>
-            <div className='rotate-[18deg] opacity-0 card'>
-              <Image src={cardsTwo[3].href} alt={cardsTwo[3].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[3].href} priority={true} />
-            </div>
+          <div className='-rotate-6 card'>
+            <Image src={cardsOne[1].href} alt={cardsOne[1].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsOne[1].href} priority={true} />
           </div>
+          <div className='rotate-6 card'>
+            <Image src={cardsOne[2].href} alt={cardsOne[2].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsOne[2].href} priority={true} />
+          </div>
+          <div className='rotate-[18deg] card'>
+            <Image src={cardsOne[3].href} alt={cardsOne[3].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsOne[3].href} priority={true} />
+          </div>
+        </div>
 
-          <div className='flex absolute bottom-2 place-content-center gap-[15%]' >
-            <button aria-label='Dislike' className='p-3 text-red-700 duration-300 rounded-full backdrop-invert-[10%] border-[3px] border-red-700 cardBtn' onClick={() => gotoSection(-1)}>
-              <MdOutlineThumbDownOffAlt size={40} />
-            </button>
-
-            <button aria-label='Like' className='p-3 text-green-600 duration-300 rounded-full backdrop-invert-[10%] cardBtn border-[3px] border-green-600' onClick={() => gotoSection(+1)}>
-              <MdOutlineThumbUpOffAlt size={40} />
-            </button>
+        <div id='cardStack' className='absolute grid self-center h-full place-items-center'>
+          <div className='-rotate-[18deg] opacity-0 card'>
+            <Image src={cardsTwo[0].href} alt={cardsTwo[0].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[0].href} priority={true} />
+          </div>
+          <div className='opacity-0 -rotate-6 card'>
+            <Image src={cardsTwo[1].href} alt={cardsTwo[1].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[1].href} priority={true} />
+          </div>
+          <div className='opacity-0 rotate-6 card'>
+            <Image src={cardsTwo[2].href} alt={cardsTwo[2].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[2].href} priority={true} />
+          </div>
+          <div className='rotate-[18deg] opacity-0 card'>
+            <Image src={cardsTwo[3].href} alt={cardsTwo[3].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsTwo[3].href} priority={true} />
           </div>
         </div>
       </div>
+      <div className='flex py-2 place-content-center gap-[15%] self-center' >
+        <button aria-label='Dislike' className='p-3 text-red-700 duration-300 rounded-full backdrop-invert-[10%] border-[3px] border-red-700 cardBtn' onClick={() => gotoSection(-1)}>
+          <MdOutlineThumbDownOffAlt size={'2rem'} />
+        </button>
+
+        <button aria-label='Like' className='p-3 text-green-600 duration-300 rounded-full backdrop-invert-[10%] cardBtn border-[3px] border-green-600' onClick={() => gotoSection(+1)}>
+          <MdOutlineThumbUpOffAlt size={'2rem'} />
+        </button>
+      </div>
+
     </>
   );
 }

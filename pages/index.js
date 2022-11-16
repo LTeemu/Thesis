@@ -48,7 +48,7 @@ const Index = () => {
 						<a href='https://pixabay.com/fi/vectors/kahvia-kuppi-kahvia-kuppi-kofeiini-5009730/' target='_blank' rel='noreferrer' className='font-bold text-cyan-600'>
 							SVG image
 						</a>
-						{' '}from Pixabay, animated with
+						{' '}from Pixabay<br></br> animated with
 						<a href='https://greensock.com/' target='_blank' rel='noreferrer' className='text-[#499110] font-extrabold'>
 							{' '}GSAP
 						</a>
@@ -65,7 +65,7 @@ const Index = () => {
 
 			<div className='flex flex-col items-center w-screen bg-lightsecondary dark:bg-darksecondary'>
 				<div className='grid grid-cols-1 gap-10 px-6 py-12 md:grid-cols-2 max-w-[1400px]'>
-					<div className='relative row-span-2 min-h-[350px] fadein'>
+					<div className='relative row-span-2 min-h-[300px] max-h-[400px] h-full w-full grid place-self-center dark:saturate-[0.6] fadein'>
 						<Image
 							src={theme == 'dark' ? '/static/images/gold.webp' : '/static/images/stonebrown.webp'}
 							alt='Lion'
@@ -82,7 +82,7 @@ const Index = () => {
 						<p>Lion was a little chap. He looked like a cat, with a round nose and a short tail. His eyes were always on me as I entered the room, his ears were pricked forward, he was as silent as a mouse, like the cat. Now and then he would turn his eyes in my direction and look as meek as the little mouse. &quot; I thought you said you were going straight to the wedding&quot;, said Ralph, in a low voice. Lion took a step toward him, almost afraid to touch him. Not at a word did the other tell his host that Lion was going straight to the wedding. &quot;Well&quot;, I said to Ralph. And then Lion ran to him and kissed him for the first time in his life.</p>
 					</div>
 
-					<div className='relative row-span-2 md:row-span-3 min-h-[350px] fadein'>
+					<div className='relative row-span-2 md:row-span-3 min-h-[300px] max-h-[400px] h-full w-full grid place-self-center fadein'>
 						<Image
 							src={theme == 'dark' ? '/static/images/floral.webp' : '/static/images/stonegreen.webp'}
 							alt='Octopus'
@@ -99,7 +99,7 @@ const Index = () => {
 						<p>Octopus in a briefcase, a creature so small that it had been shrunk to almost the size of a human, had the entire back half of its body encased in the case. Its eyes were black and slits, its arms were thin and powerful. At the first minute of my death, I&apos;d be returned to its home. With a small, soft, human hand, the octopus would make sure I got back to my home, to a home I had never been to, a place I never wanted.</p>
 					</div>
 
-					<div className='relative row-span-2 min-h-[350px] fadein'>
+					<div className='relative row-span-2 min-h-[300px] max-h-[400px] h-full w-full grid place-self-center fadein'>
 						<Image
 							src={theme == 'dark' ? '/static/images/sea.webp' : '/static/images/stoneblue.webp'}
 							alt='Fish'
@@ -121,7 +121,7 @@ const Index = () => {
 				<path d='M60 120L0 0h120L60 120zm120 0L120 0h120l-60 120zm120 0L240 0h120l-60 120zm120 0L360 0h120l-60 120zm120 0L480 0h120l-60 120zm120 0L600 0h120l-60 120zm120 0L720 0h120l-60 120zm120 0L840 0h120l-60 120zm120 0L960 0h120l-60 120zm120 0L1080 0h120l-60 120z' />
 			</svg>
 			<Companies />
-		</div>
+		</div >
 	)
 }
 
