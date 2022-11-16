@@ -48,7 +48,7 @@ const Index = () => {
 						<a href='https://pixabay.com/fi/vectors/kahvia-kuppi-kahvia-kuppi-kofeiini-5009730/' target='_blank' rel='noreferrer' className='font-bold text-cyan-600'>
 							SVG image
 						</a>
-						{' '}from Pixabay<br></br> animated with
+						{' '}from Pixabay<br /> animated with
 						<a href='https://greensock.com/' target='_blank' rel='noreferrer' className='text-[#499110] font-extrabold'>
 							{' '}GSAP
 						</a>

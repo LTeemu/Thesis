@@ -19,7 +19,7 @@ const Navbar = () => {
 		e.preventDefault();
 		if (href !== router.asPath && !animating) {
 			setAnimating(true)
-			router.prefetch(href)
+			//router.prefetch(href)
 			transitionTL.current.to('.transitionBar', { left: 0, right: 'unset', width: '100%', duration: 0.4, ease: Sine.easeIn, stagger: { each: 0.05, from: 'top' }, onComplete: () => router.push(href) })
 			navOpen && setNavOpen(false)
 			bordersVisible && setBordersVisible(false)
@@ -27,7 +27,7 @@ const Navbar = () => {
 	}
 
 	useEffect(() => {
-		router.isReady && transitionTL.current.to('.transitionBar', { left: 'unset', right: 0, width: 0, duration: 0.4, ease: Sine.easeOut, stagger: { each: 0.05, from: 'bottom' }, onComplete: () => setAnimating(false) })
+		animating && router.isReady && transitionTL.current.to('.transitionBar', { left: 'unset', right: 0, width: 0, duration: 0.4, ease: Sine.easeOut, stagger: { each: 0.05, from: 'bottom' }, onComplete: () => setAnimating(false) })
 	}, [router])
 
 	return (

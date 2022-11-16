@@ -131,11 +131,11 @@ const Cards = () => {
       </div>
       <div className='flex py-2 place-content-center gap-[15%] self-center' >
         <button aria-label='Dislike' className='p-3 text-red-700 duration-300 rounded-full backdrop-invert-[10%] border-[3px] border-red-700 cardBtn' onClick={() => gotoSection(-1)}>
-          <MdOutlineThumbDownOffAlt size={'2rem'} />
+          <MdOutlineThumbDownOffAlt style={{ fontSize: '2rem' }} />
         </button>
 
         <button aria-label='Like' className='p-3 text-green-600 duration-300 rounded-full backdrop-invert-[10%] cardBtn border-[3px] border-green-600' onClick={() => gotoSection(+1)}>
-          <MdOutlineThumbUpOffAlt size={'2rem'} />
+          <MdOutlineThumbUpOffAlt style={{ fontSize: '2rem' }} />
         </button>
       </div>
 

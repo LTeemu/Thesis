@@ -6,7 +6,7 @@ import Transition from './Transition'
 const Layout = ({ children }) => {
 
 	return (
-		<div className='flex flex-col w-screen min-h-screen'>
+		<div className='flex flex-col w-screen min-h-screen overflow-hidden'>
 			<Navbar />
 			<div className='relative flex flex-col flex-1'>
 				<Transition />
