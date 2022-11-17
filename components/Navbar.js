@@ -19,9 +19,11 @@ const Navbar = () => {
 	const handleLink = (e, href) => {
 		e.preventDefault();
 		if (href !== router.asPath && !animating) {
+			document.body.classList.add("overflow-hidden");
+			window.scrollY !== 0 && gsap.to(window, { scrollTo: 0 })
 			setAnimating(true)
 			//router.prefetch(href)
-			transitionTL.current.fromTo('.transitionBar', { width: 0 }, { left: 0, right: 'unset', width: '100%', duration: 0.4, ease: Sine.easeIn, stagger: { each: 0.05, from: 'top' }, onComplete: () => { setPrevRoute(router.asPath), router.push(href) } })
+			transitionTL.current.fromTo('.transitionBar', { width: 0 }, { left: 0, right: 'unset', width: '100%', duration: 0.4, ease: Sine.easeIn, stagger: { each: 0.05, from: 'top' }, onComplete: () => { setPrevRoute(router.asPath), router.push(href), document.body.classList.remove("overflow-hidden"); } })
 			navOpen && setNavOpen(false)
 			bordersVisible && setBordersVisible(false)
 		}
@@ -35,7 +37,7 @@ const Navbar = () => {
 	}, [router])
 
 	return (
-		<div className='flex items-center justify-between px-6 py-3'>
+		<div className='flex items-center justify-between px-6 py-3 bg-lightprimary dark:bg-darkprimary z-[52]'>
 			<Link href="/">
 				<a onClick={e => handleLink(e, '/')} className={`text-4xl font-bold ${(router.asPath === '/' || animating) && 'pointer-events-none'}`}>Logo</a>
 			</Link>

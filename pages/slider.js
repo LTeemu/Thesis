@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
-import { gsap, Expo, Elastic } from 'gsap'
+import { gsap, Expo } from 'gsap'
 import { Observer } from 'gsap/dist/Observer'
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md'
 

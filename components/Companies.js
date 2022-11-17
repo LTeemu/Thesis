@@ -78,7 +78,7 @@ const Companies = () => {
 			<div
 				className='flex w-min min-w-[200%] justify-around dark:text-lime-400 border-y-4 border-[rgba(0,0,0,0.1)] py-1'
 				id='companies2'
-				onMouseEnter={() => anim2.current.timeScale(3)}
+				onMouseEnter={() => anim2.current.timeScale(2)}
 				onMouseLeave={() => anim2.current.timeScale(1)}
 			>
 				<h2>Pineapple</h2>

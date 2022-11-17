@@ -8,7 +8,7 @@ module.exports = {
 		extend: {
 			animation: {
 				textColor: 'colorAnim 0.8s infinite',
-				loadingBG: 'loadingBG 1s ease-in-out infinite'
+				loadingBG: 'loadingBG 1.6s linear infinite'
 			},
 			backgroundImage: {
 				hero: "url('../public/static/images/pattern-2665078_1920.jpg')",
@@ -24,8 +24,8 @@ module.exports = {
 			},
 			keyframes: {
 				loadingBG: {
-					'0%, 100%': { filter: 'invert(0)' },
-					'50%': { filter: 'invert(0.06)' }
+					'0%, 100%': { filter: 'brightness(1)' },
+					'50%': { filter: 'brightness(0.9)' }
 				}
 			},
 		},

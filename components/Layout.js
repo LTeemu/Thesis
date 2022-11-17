@@ -8,8 +8,8 @@ const Layout = ({ children }) => {
 	return (
 		<div className='flex flex-col w-screen min-h-screen overflow-hidden'>
 			<Navbar />
+			<Transition />
 			<div className='relative flex flex-col flex-1'>
-				<Transition />
 				{children}
 			</div>
 			<ScrollTop />
