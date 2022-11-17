@@ -11,6 +11,7 @@ const Navbar = () => {
 	const [navOpen, setNavOpen] = useState(false)
 	const [bordersVisible, setBordersVisible] = useState(false)
 	const [animating, setAnimating] = useState(false)
+	const [prevRoute, setPrevRoute] = useState()
 	const router = useRouter()
 	const transitionTL = useRef()
 	transitionTL.current = gsap.timeline();
@@ -20,14 +21,17 @@ const Navbar = () => {
 		if (href !== router.asPath && !animating) {
 			setAnimating(true)
 			//router.prefetch(href)
-			transitionTL.current.to('.transitionBar', { left: 0, right: 'unset', width: '100%', duration: 0.4, ease: Sine.easeIn, stagger: { each: 0.05, from: 'top' }, onComplete: () => router.push(href) })
+			transitionTL.current.fromTo('.transitionBar', { width: 0 }, { left: 0, right: 'unset', width: '100%', duration: 0.4, ease: Sine.easeIn, stagger: { each: 0.05, from: 'top' }, onComplete: () => { setPrevRoute(router.asPath), router.push(href) } })
 			navOpen && setNavOpen(false)
 			bordersVisible && setBordersVisible(false)
 		}
 	}
 
 	useEffect(() => {
-		animating && router.isReady && transitionTL.current.to('.transitionBar', { left: 'unset', right: 0, width: 0, duration: 0.4, ease: Sine.easeOut, stagger: { each: 0.05, from: 'bottom' }, onComplete: () => setAnimating(false) })
+		//Had problems with router.isReady
+		if (animating && router.asPath !== prevRoute) {
+			transitionTL.current.to('.transitionBar', { left: 'unset', right: 0, width: 0, duration: 0.4, ease: Sine.easeOut, stagger: { each: 0.05, from: 'bottom' }, onComplete: () => setAnimating(false) })
+		}
 	}, [router])
 
 	return (
