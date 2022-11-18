@@ -97,7 +97,15 @@ const Cards = () => {
 
   return (
     <>
-      <Head><title>{'TL - Cards'}</title></Head>
+      <Head>
+        <title>{'TL - Cards'}</title>
+        <meta
+          name="description"
+          content="Card animation made with GSAP."
+          key="desc"
+        />
+      </Head>
+
       <div className='flex flex-col items-center justify-center flex-1 min-h-[350px]'>
         <div id='cardStack' className='absolute grid self-center h-full scale-0 place-items-center'>
           <div className='-rotate-[18deg] card'>
@@ -138,7 +146,6 @@ const Cards = () => {
           <MdOutlineThumbUpOffAlt style={{ fontSize: '2rem' }} />
         </button>
       </div>
-
     </>
   );
 }

@@ -4,7 +4,15 @@ import Head from 'next/head'
 const Custom404 = () => {
   return (
     <>
-      <Head><title>{'TL - 404'}</title></Head>
+      <Head>
+        <title>{'TL - 404'}</title>
+        <meta
+          name="description"
+          content="Oops! This page doesn't exist :("
+          key="desc"
+        />
+      </Head>
+
       <p className='z-10 self-center mt-2 text-2xl'>This page doesn&apos;t exist</p>
       <div className='relative flex items-center self-center justify-center flex-1 w-full max-w-lg'>
         <Image

@@ -65,37 +65,47 @@ const Slider = () => {
     }
   }
   return (
-    <div className='text-slate-100'>
-      <Head><title>{'TL - Slider'}</title></Head>
-      <button className='absolute left-0 z-20 top-[50%] translate-y-[-50%] ml-1 slider_arrow' onClick={() => gotoSection(-1)}>
-        <MdKeyboardArrowLeft size={30} />
-      </button>
+    <>
+      <Head>
+        <title>{'TL - Slider'}</title>
+        <meta
+          name="description"
+          content="Slider animation made with GSAP."
+          key="desc"
+        />
+      </Head>
 
-      <button className='absolute right-0 z-20 top-[50%] translate-y-[-50%] mr-1 slider_arrow' onClick={() => gotoSection(+1)}>
-        <MdKeyboardArrowRight size={30} />
-      </button>
+      <div className='text-slate-100'>
+        <button className='absolute left-0 z-20 top-[50%] translate-y-[-50%] ml-1 slider_arrow' onClick={() => gotoSection(-1)}>
+          <MdKeyboardArrowLeft size={30} />
+        </button>
 
-      <div className='absolute flex flex-col items-center justify-center w-full h-full px-10 slide'>
-        <Image src='/static/images/cherry_blossoms.webp' alt='Cherry Blossoms' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/cherry_blossoms.webp' priority={true} />
-        <div className='w-screen h-full bg-[rgba(0,0,0,0.7)] slideBG0 absolute -z-40'></div>
-        <h1 className='slideText0'>Slide 1</h1>
-        <p className='slideText0'>Mouse Scroll or Swipe Horizontally. <br /> Made with GSAP Observer</p>
+        <button className='absolute right-0 z-20 top-[50%] translate-y-[-50%] mr-1 slider_arrow' onClick={() => gotoSection(+1)}>
+          <MdKeyboardArrowRight size={30} />
+        </button>
+
+        <div className='absolute flex flex-col items-center justify-center w-full h-full px-10 slide'>
+          <Image src='/static/images/cherry_blossoms.webp' alt='Cherry Blossoms' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/cherry_blossoms.webp' priority={true} />
+          <div className='w-screen h-full bg-[rgba(0,0,0,0.7)] slideBG0 absolute -z-40'></div>
+          <h1 className='slideText0'>Slide 1</h1>
+          <p className='slideText0'>Mouse Scroll or Swipe Horizontally. <br /> Made with GSAP Observer</p>
+        </div>
+
+        <div className='absolute flex flex-col items-center justify-center invisible w-full h-full px-10 slide'>
+          <Image src='/static/images/castle.webp' alt='Castle' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/castle.webp' />
+          <div className='w-screen h-full bg-[rgba(0,0,0,0.35)] slideBG1 absolute -z-40'></div>
+          <h1 className='slideText1'>Slide 2</h1>
+          <p className='max-w-5xl slideText1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nisl eu nunc mollis sagittis. Donec sagittis tincidunt dignissim. Vestibulum consectetur risus augue, at mollis nulla lacinia et. Donec ac risus quis magna blandit laoreet eget at tellus. Cras vel tellus euismod, volutpat quam eget, pretium leo. Aliquam egestas dapibus auctor.</p>
+        </div>
+
+        <div className='absolute flex flex-col items-center justify-center invisible w-full h-full px-10 slide'>
+          <Image src='/static/images/jellyfish.webp' alt='Jellyfish' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/jellyfish.webp' />
+          <div className='w-screen h-full bg-[rgba(0,0,0,0.35)] slideBG2 absolute -z-40'></div>
+          <h1 className='slideText2'>Slide 3</h1>
+          <p className='max-w-5xl slideText2'>In hac habitasse platea dictumst. Donec malesuada ipsum magna, sed pharetra eros malesuada vitae. Morbi ornare lorem feugiat elit ullamcorper, non sodales nulla sodales. Proin vel lacus consequat, gravida felis id, pellentesque ex. Maecenas id consectetur ipsum. Duis purus lectus, aliquet porttitor facilisis quis, aliquet eget eros. Morbi placerat odio in est dapibus facilisis. </p>
+        </div>
       </div>
-
-      <div className='absolute flex flex-col items-center justify-center invisible w-full h-full px-10 slide'>
-        <Image src='/static/images/castle.webp' alt='Castle' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/castle.webp' />
-        <div className='w-screen h-full bg-[rgba(0,0,0,0.35)] slideBG1 absolute -z-40'></div>
-        <h1 className='slideText1'>Slide 2</h1>
-        <p className='max-w-5xl slideText1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nisl eu nunc mollis sagittis. Donec sagittis tincidunt dignissim. Vestibulum consectetur risus augue, at mollis nulla lacinia et. Donec ac risus quis magna blandit laoreet eget at tellus. Cras vel tellus euismod, volutpat quam eget, pretium leo. Aliquam egestas dapibus auctor.</p>
-      </div>
-
-      <div className='absolute flex flex-col items-center justify-center invisible w-full h-full px-10 slide'>
-        <Image src='/static/images/jellyfish.webp' alt='Jellyfish' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/jellyfish.webp' />
-        <div className='w-screen h-full bg-[rgba(0,0,0,0.35)] slideBG2 absolute -z-40'></div>
-        <h1 className='slideText2'>Slide 3</h1>
-        <p className='max-w-5xl slideText2'>In hac habitasse platea dictumst. Donec malesuada ipsum magna, sed pharetra eros malesuada vitae. Morbi ornare lorem feugiat elit ullamcorper, non sodales nulla sodales. Proin vel lacus consequat, gravida felis id, pellentesque ex. Maecenas id consectetur ipsum. Duis purus lectus, aliquet porttitor facilisis quis, aliquet eget eros. Morbi placerat odio in est dapibus facilisis. </p>
-      </div>
-    </div>
+    </>
   );
 }
 
