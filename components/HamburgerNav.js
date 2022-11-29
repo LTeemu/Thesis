@@ -27,15 +27,17 @@ const HamburgerNav = ({ navOpen, setNavOpen, handleLink }) => {
   return (
     <>
       <Hamburger navOpen={navOpen} setNavOpen={setNavOpen} />
-      <div id="navContainer" className='z-[52] absolute top-[66px] right-6 md:hidden dark:bg-darksecondary bg-slate-200 shadow-[inset_0_0_6px_0px_rgba(0,0,0,0.5)] rounded-2xl hidden'>
-        <div id='linkContainer' className="flex flex-col p-4 md:hidden my-children">
+      <nav id="navContainer" className='z-[52] absolute top-[66px] right-6 md:hidden dark:bg-darksecondary bg-slate-200 shadow-[inset_0_0_6px_0px_rgba(0,0,0,0.5)] rounded-2xl hidden'>
+        <ul id='linkContainer' className="flex flex-col p-4 md:hidden my-children">
           {links.map((link, index) =>
-            <Link href={link.href} key={index}>
-              <a title={link.title} onClick={e => handleLink(e, link.href)} className={`text-xl font-bold ${link.href === router.asPath ? 'text-pink-500 pointer-events-none cursor-default' : 'dark:hover:text-cyan-300 hover:text-[#865125]'}`}  > {link.title}</a>
-            </Link>
+            <li key={index}>
+              <Link href={link.href}>
+                <a title={link.title} onClick={e => handleLink(e, link.href)} className={`text-xl font-bold ${link.href === router.asPath ? 'text-pink-500 pointer-events-none cursor-default' : 'dark:hover:text-cyan-300 hover:text-[#865125]'}`}  > {link.title}</a>
+              </Link>
+            </li>
           )}
-        </div>
-      </div>
+        </ul>
+      </nav>
     </>
   )
 }

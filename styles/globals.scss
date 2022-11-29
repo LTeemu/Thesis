@@ -42,10 +42,12 @@ p {
   font-size: 1.2rem;
 }
 
-#companies1>h2,
-#companies2>h2,
-#companies3>h2 {
+#marquee1>p,
+#marquee2>p,
+#marquee3>p {
   margin: 0 1rem 0 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
 svg {

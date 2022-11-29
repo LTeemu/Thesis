@@ -9,9 +9,9 @@ const Layout = ({ children }) => {
 		<div className='flex flex-col w-screen min-h-screen overflow-hidden'>
 			<Navbar />
 			<Transition />
-			<div className='relative flex flex-col flex-1'>
+			<main className='relative flex flex-col flex-1'>
 				{children}
-			</div>
+			</main>
 			<ScrollTop />
 			<Footer />
 		</div>

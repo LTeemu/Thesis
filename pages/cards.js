@@ -106,7 +106,7 @@ const Cards = () => {
         />
       </Head>
 
-      <div className='flex flex-col items-center justify-center flex-1 min-h-[350px]'>
+      <div className='flex flex-col relative items-center justify-center flex-1 min-h-[350px] max-h-[200vw]'>
         <div id='cardStack' className='absolute grid self-center h-full scale-0 place-items-center'>
           <div className='-rotate-[18deg] card'>
             <Image src={cardsOne[0].href} alt={cardsOne[0].alt} layout="fill" objectFit="cover" placeholder='blur' className='rounded-xl' blurDataURL={cardsOne[0].href} priority={true} />

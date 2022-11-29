@@ -37,23 +37,27 @@ const Navbar = () => {
 	}, [router])
 
 	return (
-		<div className='flex items-center justify-between px-6 py-3 bg-lightprimary dark:bg-darkprimary z-[52]'>
+		<header className='flex items-center justify-between px-6 py-3 bg-lightprimary dark:bg-darkprimary z-[52]'>
 			<Link href="/">
 				<a onClick={e => handleLink(e, '/')} className={`text-4xl font-bold ${(router.asPath === '/' || animating) && 'pointer-events-none'}`}>Logo</a>
 			</Link>
-			<div className='flex-row hidden md:flex ml-children'>
-				{links.map((link, index) =>
-					<Link href={link.href} key={index}>
-						<a onClick={e => handleLink(e, link.href)} title={link.title} className={`text-xl font-bold ${link.href === router.asPath ? 'text-pink-500' : 'dark:hover:text-cyan-300 hover:text-[#865125]'} ${(link.href === router.asPath || animating) && 'pointer-events-none'}`}>{link.title}</a>
-					</Link>
-				)}
-			</div>
+			<nav>
+				<ul className='flex-row hidden md:flex ml-children'>
+					{links.map((link, index) =>
+						<li key={index}>
+							<Link href={link.href}>
+								<a onClick={e => handleLink(e, link.href)} title={link.title} className={`text-xl font-bold ${link.href === router.asPath ? 'text-pink-500' : 'dark:hover:text-cyan-300 hover:text-[#865125]'} ${(link.href === router.asPath || animating) && 'pointer-events-none'}`}>{link.title}</a>
+							</Link>
+						</li>
+					)}
+				</ul>
+			</nav>
 			<div className='flex items ml-children'>
 				<ToggleBorder bordersVisible={bordersVisible} setBordersVisible={setBordersVisible} />
 				<Darkbtn />
 				<HamburgerNav navOpen={navOpen} setNavOpen={setNavOpen} handleLink={handleLink} />
 			</div>
-		</div>
+		</header>
 	)
 }
 
