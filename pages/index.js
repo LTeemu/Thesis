@@ -12,16 +12,22 @@ const Index = () => {
 	const { theme } = useTheme()
 
 	useEffect(() => {
-		gsap.utils.toArray('.fadein').forEach((element) => {
+		gsap.utils.toArray('.fadein').forEach((element, i) => {
 			gsap.fromTo(element,
-				{ y: 0, opacity: 0.25 },
 				{
-					y: 0, ease: 'linear', opacity: 1, duration: 0.5,
+					opacity: 0,
+					xPercent: window.innerWidth < 768 //md:
+						? (i + 1) % 2 === 0 ? 20 : -20
+						: (i + 1) % 2 === 0 && i !== 3 || i === 2 ? 20 : -20
+				},
+				{
+					xPercent: 0, opacity: 1, duration: 1, ease: "power2",
 					scrollTrigger: {
+						once: true,
 						trigger: element,
-						start: 'top 87.5%',
-						end: 'bottom 12.5%',
-						toggleActions: 'play reverse play reverse'
+						start: 'top 100%',
+						//end: 'bottom 10%',
+						toggleActions: 'play complete play complete'
 					},
 				}
 			)
@@ -69,7 +75,7 @@ const Index = () => {
 
 				<div className='flex flex-col items-center w-screen bg-lightsecondary dark:bg-darksecondary'>
 					<div className='grid grid-cols-1 gap-10 px-6 py-12 md:grid-cols-2 max-w-[1400px]'>
-						<div className='relative row-span-2 min-h-[300px] max-h-[400px] h-full w-full grid place-self-center dark:saturate-[0.6] fadein'>
+						<div className='relative row-span-2 min-h-[300px] max-h-[400px] h-full w-full grid place-self-center dark:saturate-[0.6] opacity-0 fadein'>
 							<Image
 								src={theme == 'dark' ? '/static/images/gold.webp' : '/static/images/stonebrown.webp'}
 								alt='Lion'
@@ -81,12 +87,12 @@ const Index = () => {
 							/>
 						</div>
 
-						<div className='row-span-1 fadein'>
+						<div className='row-span-1 opacity-0 fadein'>
 							<h2 className='dark:animate-textColor'>Lion, Sassbook AI Story Writer</h2>
 							<p>Lion was a little chap. He looked like a cat, with a round nose and a short tail. His eyes were always on me as I entered the room, his ears were pricked forward, he was as silent as a mouse, like the cat. Now and then he would turn his eyes in my direction and look as meek as the little mouse. &quot; I thought you said you were going straight to the wedding&quot;, said Ralph, in a low voice. Lion took a step toward him, almost afraid to touch him. Not at a word did the other tell his host that Lion was going straight to the wedding. &quot;Well&quot;, I said to Ralph. And then Lion ran to him and kissed him for the first time in his life.</p>
 						</div>
 
-						<div className='relative row-span-2 md:row-span-3 min-h-[300px] max-h-[400px] h-full w-full grid place-self-center fadein'>
+						<div className='relative row-span-2 md:row-span-3 min-h-[300px] max-h-[400px] h-full w-full grid place-self-center opacity-0 fadein'>
 							<Image
 								src={theme == 'dark' ? '/static/images/floral.webp' : '/static/images/stonegreen.webp'}
 								alt='Octopus'
@@ -98,12 +104,12 @@ const Index = () => {
 							/>
 						</div>
 
-						<div className='row-span-1 fadein'>
+						<div className='row-span-1 opacity-0 fadein'>
 							<h2 className='dark:animate-textColor'>Octopus in a briefcase</h2>
 							<p>Octopus in a briefcase, a creature so small that it had been shrunk to almost the size of a human, had the entire back half of its body encased in the case. Its eyes were black and slits, its arms were thin and powerful. At the first minute of my death, I&apos;d be returned to its home. With a small, soft, human hand, the octopus would make sure I got back to my home, to a home I had never been to, a place I never wanted.</p>
 						</div>
 
-						<div className='relative row-span-2 min-h-[300px] max-h-[400px] h-full w-full grid place-self-center fadein'>
+						<div className='relative row-span-2 min-h-[300px] max-h-[400px] h-full w-full grid place-self-center opacity-0  fadein'>
 							<Image
 								src={theme == 'dark' ? '/static/images/sea.webp' : '/static/images/stoneblue.webp'}
 								alt='Fish'
@@ -115,7 +121,7 @@ const Index = () => {
 							/>
 						</div>
 
-						<div className='row-span-1 fadein'>
+						<div className='row-span-1 opacity-0 fadein'>
 							<h2 className='dark:animate-textColor'>Fish sticks</h2>
 							<p>Fish sticks are not to my taste, he declared. They are too good for the sea. He was right. The fish sticks were too perfect for sea food. And there I left him, feeling that I was on a certain level with the great ocean, and that my life was complete.</p>
 						</div>

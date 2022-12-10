@@ -30,3 +30,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# bad experiments
+/pages/test.js
+public/static/images/snowflakes-2031353.svg
