@@ -20,7 +20,7 @@ const Slider = () => {
 
     const observer = Observer.create({
       target: window,
-      type: "wheel, touch",
+      type: "wheel, touch, pointer",
       tolerance: 50,
       onRight: () => {
         gotoSection(-1);
@@ -37,8 +37,22 @@ const Slider = () => {
         }
       },
     })
+
+    function arrowKeys(e) {
+      switch (e.code) {
+        case "ArrowLeft":
+          gotoSection(-1)
+          break;
+        case "ArrowRight":
+          gotoSection(+1)
+          break;
+      }
+    }
+
+    document.addEventListener('keydown', arrowKeys)
     return () => {
       observer.disable()
+      document.removeEventListener('keydown', arrowKeys)
     }
   }, [])
 
@@ -75,7 +89,7 @@ const Slider = () => {
         />
       </Head>
 
-      <div className='text-slate-100'>
+      <div className='text-slate-100 noSelect'>
         <button className='absolute left-0 z-20 top-[50%] translate-y-[-50%] ml-1 slider_arrow' onClick={() => gotoSection(-1)}>
           <MdKeyboardArrowLeft size={30} />
         </button>
@@ -88,7 +102,7 @@ const Slider = () => {
           <Image src='/static/images/cherry_blossoms.webp' alt='Cherry Blossoms' layout="fill" objectFit="cover" className='-z-50' placeholder='blur' blurDataURL='/static/images/cherry_blossoms.webp' priority={true} />
           <div className='w-screen h-full bg-[rgba(0,0,0,0.7)] slideBG0 absolute -z-40'></div>
           <h1 className='slideText0'>Slide 1</h1>
-          <p className='slideText0'>Mouse Scroll or Swipe Horizontally. <br /> Made with GSAP Observer</p>
+          <p className='slideText0'>Mouse Scroll - Swipe - Arrow Keys <br /> Made with GSAP Observer</p>
         </div>
 
         <div className='absolute flex flex-col items-center justify-center invisible w-full h-full px-10 slide'>

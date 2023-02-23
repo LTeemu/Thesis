@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import Head from 'next/head'
+import { useState } from 'react';
 
 const Custom404 = () => {
+  const [imgLoaded, setImgLoaded] = useState(false);
+
   return (
     <>
       <Head>
@@ -24,7 +27,8 @@ const Custom404 = () => {
           objectPosition='center'
           placeholder='blur'
           blurDataURL='/static/images/oops.webp'
-          className='bg-no-repeat aspect-square'
+          onLoadingComplete={() => setImgLoaded(true)}
+          className={`bg-no-repeat aspect-square ${imgLoaded ? 'animate-unblur' : ''}`}
         />
       </div>
     </>

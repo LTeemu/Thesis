@@ -21,7 +21,7 @@ const ScrollTop = () => {
 
 	return (
 		scrollY > 300 && (
-			<button onClick={() => gsap.to(window, { scrollTo: 0 })} aria-label='Scroll top' className='fixed bottom-0 right-0 z-40 p-1 shadow-[inset_2px_2px_1px_1px_rgba(0,0,0,0.4)] bg-gray-900 cursor-pointer text-slate-100 bg-opacity-70 rounded-tl-xl'>
+			<button onClick={() => gsap.to(window, { scrollTo: 0, duration: 0 })} aria-label='Scroll top' className='fixed bottom-0 right-0 z-40 p-1 shadow-[inset_2px_2px_1px_1px_rgba(0,0,0,0.4)] bg-gray-900 cursor-pointer text-slate-100 bg-opacity-70 rounded-tl-xl'>
 				<AiOutlineRocket style={{ fontSize: '3rem' }} />
 			</button>
 		)

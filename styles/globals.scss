@@ -9,8 +9,8 @@
 }
 
 :root {
-font-size: 1rem;
-font-size: clamp(1rem, 0.9642857142857143rem + 0.17857142857142858vw, 1.25rem);
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.9642857142857143rem + 0.17857142857142858vw, 1.25rem);
 }
 
 html {
@@ -42,9 +42,9 @@ p {
   font-size: 1.2rem;
 }
 
-#marquee1>p,
-#marquee2>p,
-#marquee3>p {
+#marquee1 > p,
+#marquee2 > p,
+#marquee3 > p {
   margin: 0 1rem 0 1rem;
   font-size: 1.6rem;
   font-weight: bold;
@@ -58,11 +58,11 @@ svg {
   outline: solid 1px #ea2e6e;
 }
 
-.my-children>*:not(:first-child) {
+.my-children > *:not(:first-child) {
   margin-top: 1em;
 }
 
-.ml-children>*:not(:first-child) {
+.ml-children > *:not(:first-child) {
   margin-left: 1em;
 }
 
@@ -75,7 +75,7 @@ svg {
     position: absolute;
     content: '';
   }
-  
+
   &:after {
     width: 100%;
     height: 6px;
@@ -87,29 +87,21 @@ svg {
 }
 
 #sun-shadow1 {
-  box-shadow:
-    15px 0 0 0 #e3b566,
-    -15px 0 0 0 #e3b566;
+  box-shadow: 15px 0 0 0 #e3b566, -15px 0 0 0 #e3b566;
 }
 
 #sun-shadow2 {
-  box-shadow:
-    15px 0 0 0 #e3b566,
-    -15px 0 0 0 #e3b566;
+  box-shadow: 15px 0 0 0 #e3b566, -15px 0 0 0 #e3b566;
   transform: rotate(90deg);
 }
 
 #sun-shadow3 {
-  box-shadow:
-    15px 0 0 0 #d4a149,
-    -15px 0 0 0 #d4a149;
+  box-shadow: 15px 0 0 0 #d4a149, -15px 0 0 0 #d4a149;
   transform: rotate(45deg);
 }
 
 #sun-shadow4 {
-  box-shadow:
-    15px 0 0 0 #d4a149,
-    -15px 0 0 0 #d4a149;
+  box-shadow: 15px 0 0 0 #d4a149, -15px 0 0 0 #d4a149;
   transform: rotate(-45deg);
 }
 
@@ -118,17 +110,17 @@ svg {
     text-shadow: greenyellow -1px 1.25px 1px;
     filter: blur(0.5px);
   }
-  
+
   20% {
     text-shadow: cyan 1.25px -1.5px 1px;
     filter: blur(0.5px);
   }
-  
+
   80% {
     text-shadow: red 1px 1.75px 1px;
     filter: blur(0.5px);
   }
-  
+
   100% {
     text-shadow: yellow -1.25px 1.25px 1px;
     filter: blur(0.5px);
@@ -147,8 +139,18 @@ svg {
   from {
     background-position: 0% center;
   }
-  
+
   to {
     background-position: 100% center;
   }
+}
+
+.noSelect {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

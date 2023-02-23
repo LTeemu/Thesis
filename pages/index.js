@@ -17,8 +17,8 @@ const Index = () => {
 				{
 					opacity: 0,
 					xPercent: window.innerWidth < 768 //md:
-						? (i + 1) % 2 === 0 ? 20 : -20
-						: (i + 1) % 2 === 0 && i !== 3 || i === 2 ? 20 : -20
+						? (i + 1) % 2 === 0 ? 10 : -10
+						: (i + 1) % 2 === 0 && i !== 3 || i === 2 ? 10 : -10
 				},
 				{
 					xPercent: 0, opacity: 1, duration: 1, ease: "power2",
